@@ -20,6 +20,7 @@ namespace mtce
         std::uint32_t charm_power;
         std::uint32_t color;
         std::string name;
+        bool has_upgrade;
         std::array<double, ABILITY_COUNT> charm_data;
     };
 

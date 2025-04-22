@@ -16,46 +16,57 @@
 
 namespace mtce
 {
-    inline static constexpr std::size_t ENCODED_CHARM_STAT_BITS = 26;
-    inline static constexpr int32_t ENCODED_CHARM_STAT_SCALE = (1 << ENCODED_CHARM_STAT_BITS) - 1;
-
-#ifdef IS_LANGUAGE_SERVER
-    inline static constexpr std::size_t DEFAULT_VECTOR_BLOCK = 512 / 8;
-    // tunables
-    inline static constexpr std::size_t CHARM_STRUCT_ALGIN = DEFAULT_VECTOR_BLOCK;
-    inline static constexpr std::size_t TABLE_SIZE_ALIGN = ABILITY_COUNT;
-#else
-    inline static constexpr std::size_t DEFAULT_VECTOR_BLOCK = 512 / 8;
-    // tunables
-    inline static constexpr std::size_t CHARM_STRUCT_ALGIN = DEFAULT_VECTOR_BLOCK;
-    inline static constexpr std::size_t TABLE_SIZE_ALIGN = DEFAULT_VECTOR_BLOCK / sizeof(int32_t);
-#endif
-
-    // fast encoding of a charm
-    // everything is encoded as int32_t for performance reasons (vectorization potential)
-    // we take 26 bits of precision from raw floating point values (this is technically too many! we only need 23 for 32-bit floats)
-    // alignment for vectorization reasons
-    template <std::size_t N>
-    struct alignas(CHARM_STRUCT_ALGIN) table_t
-    {
-        std::array<int32_t, N> stat_table;
-    };
-
-    struct alignas(CHARM_STRUCT_ALGIN) charm_set_buffer
-    {
-        std::array<charm_id, 8> data; // there's only 7 entries but we use eight because it might perform better for vectorization
-    };
-
-    template <std::size_t N>
-    using charm_buffer = std::vector<table_t<N>>;
-
-    using cp_buffer = std::vector<uint32_t>;
-
     namespace
     {
+        inline static constexpr std::size_t ENCODED_CHARM_STAT_BITS = 26;
+        inline static constexpr int32_t ENCODED_CHARM_STAT_SCALE = (1 << ENCODED_CHARM_STAT_BITS) - 1;
+
+#ifdef IS_LANGUAGE_SERVER
+        inline static constexpr std::size_t DEFAULT_VECTOR_BLOCK = 512 / 8;
+        // tunables
+        inline static constexpr std::size_t CHARM_STRUCT_ALGIN = DEFAULT_VECTOR_BLOCK;
+        inline static constexpr std::size_t TABLE_SIZE_ALIGN = ABILITY_COUNT;
+#else
+        inline static constexpr std::size_t DEFAULT_VECTOR_BLOCK = 512 / 8;
+        // tunables
+        inline static constexpr std::size_t CHARM_STRUCT_ALGIN = DEFAULT_VECTOR_BLOCK;
+        inline static constexpr std::size_t TABLE_SIZE_ALIGN = DEFAULT_VECTOR_BLOCK / sizeof(int32_t);
+#endif
+
+        // fast encoding of a charm
+        // everything is encoded as int32_t for performance reasons (vectorization potential)
+        // we take 26 bits of precision from raw floating point values (this is technically too many! we only need 23 for 32-bit floats)
+        // alignment for vectorization reasons
         template <std::size_t N>
-        auto eval_charms(const charm_buffer<N>& charms, const cp_buffer& cp_table, uint32_t max_cp, table_t<N> weights, size_t n_threads)
-            -> std::vector<charm_id>;
+        struct alignas(CHARM_STRUCT_ALGIN) table_t
+        {
+            std::array<int32_t, N> stat_table;
+        };
+
+        struct alignas(CHARM_STRUCT_ALGIN) charm_set_buffer
+        {
+            std::array<charm_id, 8> data; // there's only 7 entries but we use eight because it might perform better for vectorization
+        };
+
+        template <std::size_t N>
+        using charm_buffer = std::vector<table_t<N>>;
+
+        using cp_buffer = std::vector<uint32_t>;
+
+        using offset_buffer = std::vector<uint32_t>;
+
+        using internal_result_t = std::pair<int64_t, charm_set_buffer>;
+
+        template <std::size_t N>
+        struct eval_config
+        {
+            const charm_buffer<N>& charms;
+            const cp_buffer& cp_table;
+            const offset_buffer& offset_table;
+            uint32_t max_cp;
+            table_t<N> weights;
+            size_t n_threads;
+        };
 
         template <std::size_t N>
         class charm_eval_helper
@@ -63,14 +74,14 @@ namespace mtce
             table_t<N> weights{};
             std::span<const table_t<N>> charms;
             std::span<const uint32_t> cp_table;
+            std::span<const uint32_t> offset_table;
             uint32_t max_charm_power{};
 
             int64_t max_utility_value{};
             charm_set_buffer best_charm_set{};
 
             template <std::size_t M>
-            friend auto eval_charms(const charm_buffer<M>& charms, const cp_buffer& cp_table, uint32_t max_cp, table_t<M> weights, size_t n_threads)
-                -> std::vector<charm_id>;
+            friend auto eval_charms(const eval_config<M>& cfg) -> internal_result_t;
 
             [[gnu::always_inline]] constexpr auto eval_stats(const table_t<N>& stats) -> int64_t
             {
@@ -119,46 +130,32 @@ namespace mtce
                             new_charm_set_stats.stat_table.at(j) += charm.stat_table.at(j);
                         }
 
-                        eval_charm<CharmsLeft - 1>(new_charm_set_stats, curr_cp + cp_table[i], new_charm_set, i + 1);
+                        eval_charm<CharmsLeft - 1>(new_charm_set_stats, curr_cp + cp_table[i], new_charm_set, i + offset_table[i]);
                     }
                 }
             }
         };
 
-        constexpr auto prepare_result(const charm_set_buffer& charm_set)
-        {
-            std::vector<charm_id> ch_res;
-            ch_res.reserve(CHARM_COUNT_MAX);
-
-            for (const auto charm : charm_set.data)
-            {
-                if (charm != MISSING_ID)
-                {
-                    ch_res.push_back(charm);
-                }
-            }
-
-            return ch_res;
-        }
-
         template <std::size_t N>
-        auto eval_charms(const charm_buffer<N>& charms, const cp_buffer& cp_table, uint32_t max_cp, table_t<N> weights, size_t n_threads)
-            -> std::vector<charm_id>
+        auto eval_charms(const eval_config<N>& cfg) -> internal_result_t
         {
-            if (n_threads <= 1)
+            if (cfg.n_threads <= 1)
             {
                 charm_eval_helper<N> helper;
-                helper.charms = charms;
-                helper.cp_table = cp_table;
-                helper.max_charm_power = max_cp;
-                helper.weights = weights;
+                helper.charms = cfg.charms;
+                helper.cp_table = cfg.cp_table;
+                helper.max_charm_power = cfg.max_cp;
+                helper.weights = cfg.weights;
                 helper.max_utility_value = -1;
+                helper.offset_table = cfg.offset_table;
+
                 table_t<N> stats_buffer{};
+
                 charm_set_buffer id_buffer{};
                 std::ranges::fill(id_buffer.data, MISSING_ID);
 
                 helper.template eval_charm<CHARM_COUNT_MAX>(stats_buffer, 0, id_buffer, 0);
-                return prepare_result(helper.best_charm_set);
+                return {helper.max_utility_value, helper.best_charm_set};
             }
             else // NOLINT(readability-else-after-return)
             {
@@ -167,20 +164,22 @@ namespace mtce
                 std::vector<std::thread> workers;
                 std::atomic<charm_id> jobs = 0;
 
-                for (size_t i = 0; i < n_threads; i++)
+                for (size_t i = 0; i < cfg.n_threads; i++)
                 {
                     charm_eval_helper<N> helper;
-                    helper.charms = charms;
-                    helper.cp_table = cp_table;
-                    helper.max_charm_power = max_cp;
-                    helper.weights = weights;
+                    helper.charms = cfg.charms;
+                    helper.cp_table = cfg.cp_table;
+                    helper.max_charm_power = cfg.max_cp;
+                    helper.weights = cfg.weights;
                     helper.max_utility_value = -1;
+                    helper.offset_table = cfg.offset_table;
+
                     results.push_back(std::move(helper));
                 }
 
-                for (size_t i = 0; i < n_threads; i++)
+                for (size_t i = 0; i < cfg.n_threads; i++)
                 {
-                    std::thread worker([&helper = results[i], &jobs, &charms, &cp_table]() {
+                    std::thread worker([&helper = results[i], &jobs, &charms = cfg.charms, &cp_table = cfg.cp_table, &offs = cfg.offset_table]() {
                         while (true)
                         {
                             auto curr_job = jobs.fetch_add(1);
@@ -195,13 +194,13 @@ namespace mtce
                             std::ranges::fill(id_buffer.data, MISSING_ID);
                             id_buffer.data[0] = curr_job;
 
-                            helper.template eval_charm<CHARM_COUNT_MAX - 1>(stats_buffer, cp_table[curr_job], id_buffer, curr_job + 1);
+                            helper.template eval_charm<CHARM_COUNT_MAX - 1>(stats_buffer, cp_table[curr_job], id_buffer, curr_job + offs[curr_job]);
                         }
                     });
                     workers.emplace_back(std::move(worker));
                 }
 
-                for (size_t i = 0; i < n_threads; i++)
+                for (size_t i = 0; i < cfg.n_threads; i++)
                 {
                     workers[i].join();
                 }
@@ -209,7 +208,7 @@ namespace mtce
                 int64_t max_utility_value{};
                 charm_set_buffer best_charm_set{};
 
-                for (size_t i = 0; i < n_threads; i++)
+                for (size_t i = 0; i < cfg.n_threads; i++)
                 {
                     if (results[i].max_utility_value > max_utility_value)
                     {
@@ -218,14 +217,15 @@ namespace mtce
                     }
                 }
 
-                return prepare_result(best_charm_set);
+                return {max_utility_value, best_charm_set};
             }
         }
 
         struct charm_compact_dyn
         {
-            uint32_t original_index{};
+            charm_id original_index{};
             uint32_t charm_power{};
+            bool has_upgrade{};
             std::vector<int32_t> stat_table;
         };
 
@@ -236,25 +236,35 @@ namespace mtce
         {
             charm_buffer<N> _charms;
             cp_buffer cp_table;
+            offset_buffer offset_table;
             table_t<N> _weights{};
 
             _charms.reserve(charms.size());
             cp_table.reserve(charms.size());
+            offset_table.reserve(charms.size());
 
             for (const auto& charm : charms)
             {
                 table_t<N> storage{};
                 cp_table.push_back(charm.charm_power);
+                offset_table.push_back(charm.has_upgrade ? 2 : 1);
                 std::copy(charm.stat_table.begin(), charm.stat_table.end(), storage.stat_table.begin());
                 _charms.emplace_back(std::move(storage));
             }
 
             std::copy(weights.begin(), weights.end(), _weights.stat_table.begin());
 
-            return eval_charms<N>(_charms, cp_table, max_charm_power, _weights, n_threads);
+            return eval_charms<N>(eval_config<N>{
+                .charms = _charms,
+                .cp_table = cp_table,
+                .offset_table = offset_table,
+                .max_cp = max_charm_power,
+                .weights = _weights,
+                .n_threads = n_threads,
+            });
         }
 
-        using eval_charm_delegate_t = std::vector<charm_id> (*)(
+        using eval_charm_delegate_t = internal_result_t (*)(
             const std::vector<charm_compact_dyn>& charms, uint32_t max_charm_power, const std::vector<int32_t>& weights, size_t n_threads
         );
 
@@ -319,6 +329,7 @@ namespace mtce
                 charm_compact_dyn charm_compact;
                 charm_compact.original_index = i;
                 charm_compact.charm_power = charm.charm_power;
+                charm_compact.has_upgrade = charm.has_upgrade;
                 charm_compact.stat_table.reserve(important_abilities.size());
 
                 bool has_nonzero = false;
@@ -351,7 +362,7 @@ namespace mtce
         }
     } // namespace
 
-    auto evaluate_naive(const std::vector<charm>& charms, uint32_t max_cp, const charm_weights& weights, size_t threads) -> std::vector<charm_id>
+    auto evaluate_naive(const std::vector<charm>& charms, uint32_t max_cp, const charm_weights& weights, size_t threads) -> eval_result
     {
         auto [important_abilities, compact_dyn_charms, compact_weights] = prepare(charms, weights);
 
@@ -372,6 +383,22 @@ namespace mtce
             return {};
         }
 
-        return table_helper::TABLE[important_abilities.size()](compact_dyn_charms, max_cp, compact_weights, threads);
+        auto [utility, charm_set] = table_helper::TABLE[important_abilities.size()](compact_dyn_charms, max_cp, compact_weights, threads);
+
+        std::vector<charm_id> ch_res;
+        ch_res.reserve(CHARM_COUNT_MAX);
+
+        for (const auto charm : charm_set.data)
+        {
+            if (charm != MISSING_ID)
+            {
+                ch_res.push_back(compact_dyn_charms[charm].original_index);
+            }
+        }
+
+        return {
+            .utility_value = utility,
+            .charms = ch_res,
+        };
     }
 } // namespace mtce

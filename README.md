@@ -1,7 +1,16 @@
 # Multi-Threaded Zenith Charm Evaluator
 A fast zenith charm evaluation tool written in c++, optimized for multithreaded performance and modern superscalar processors.
 
-## Details 
+## Usage
+
+### Building 
+
+To optimize for performance, it is highly recommended you build from source. Modern processors have features like AVX which massively improve 
+performance, and building from source allows the compiler to build a version of the program tailored to your CPU.
+
+### Configuration
+
+## Implementation Details 
 
 ### Module: `naive`
 

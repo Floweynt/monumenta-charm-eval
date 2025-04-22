@@ -176,3 +176,4 @@
 3;Chiseled Shard of Dust;1;earthen_wrath_cooldown:earthen_wrath_damage_reflected:earthen_wrath_transfer_radius:earthen_wrath_radius;-5.57:16.00:-19.00:28.00;-8.07:16.00:-19.00:33.00
 0;Blustery Whistle of Gluttony;2;guarding_bolt_cooldown:thundercloud_form_flight_speed:wind_walk_levitation_duration;-6.19:5.00:0.57;-8.69:10.00:0.82
 2;Boiling Tablet of Flame;1;fireball_cooldown:fireball_damage:fireball_radius:fireball_velocity;-7.81:20.00:23.00:-30.00;-7.81:20.00:28.00:-20.00
+2;Energized Boon of Discovery;5;detonation_death_radius:flame_spirit_cooldown:igneous_rune_damage:igneous_rune_buff_amplifier:primordial_mastery_damage_multiplier:pyroblast_cooldown:pyroblast_fire_duration:volcanic_combos_radius:volcanic_meteor_damage:volcanic_meteor_radius;22.00:-7.99:19.00:4.00:1.35:-10.80:3.00:13.00:16.00:14.00;27.00:-10.49:24.00:6.00:2.85:-13.30:3.00:18.00:21.00:19.00

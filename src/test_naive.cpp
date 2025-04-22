@@ -8,9 +8,9 @@ using namespace mtce;
 
 namespace
 {
-    void print_res(const std::vector<charm_id>& ids)
+    void print_res(const eval_result& ids)
     {
-        for (const auto c_id : ids)
+        for (const auto c_id : ids.charms)
         {
             std::cout << c_id << " ";
         }

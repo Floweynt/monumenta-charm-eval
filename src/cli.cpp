@@ -71,14 +71,16 @@ namespace mtce
             return res;
         }
 
-        constexpr auto create_charm_from_data(
-            uint8_t charm_power, uint32_t color, std::string name, std::span<const size_t> index_map, std::string_view values, size_t line_no
+        constexpr auto create_charm(
+            uint8_t charm_power, uint32_t color, std::string name, bool has_upgrade, std::span<const size_t> index_map, std::string_view values,
+            size_t line_no
         ) -> charm
         {
             charm instance{
                 .charm_power = charm_power,
                 .color = color,
                 .name = std::move(name),
+                .has_upgrade = has_upgrade,
             };
 
             auto entries = split_string_view(values, ':');
@@ -259,16 +261,15 @@ namespace mtce
                 effect_ids.push_back(iter->second);
             }
 
-            res.push_back(create_charm_from_data(charm_power, COLOR_BY_RARITY.at(rarity), std::string(name), effect_ids, parts[4], line_no));
+            res.push_back(create_charm(charm_power, COLOR_BY_RARITY.at(rarity), std::string(name), parts.size() == 6, effect_ids, parts[4], line_no));
 
-            /*
             if (parts.size() == 6)
             {
                 check(rarity < COLOR_BY_RARITY.size() - 1, "bad charm data on line {}: illegal rarity {}", line_no, rarity);
-                res.push_back(
-                    create_charm_from_data(charm_power, COLOR_BY_RARITY.at(rarity + 1), std::string(name) + " (u)", effect_ids, parts[5], line_no)
-                );
-            }*/
+                res.push_back(create_charm(
+                    charm_power, COLOR_BY_RARITY.at(rarity + 1), std::string(name) + " (u)", false, effect_ids, parts[5], line_no
+                ));
+            }
         }
 
         return res;

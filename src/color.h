@@ -2,11 +2,12 @@
 
 #include <cstdint>
 #include <format>
-#include <iterator>
+#include <string>
 
 #define gray(x) "\x1b[38;2;128;128;128m" x "\x1b[0m"
 #define yellow(x) "\x1b[38;2;229;158;103m" x "\x1b[0m"
 #define green(x) "\x1b[38;2;107;176;93m" x "\x1b[0m"
+#define important(x) "\x1b[1m" x "\x1b[0m"
 
 namespace mtce
 {
@@ -17,6 +18,8 @@ namespace mtce
         T value;
 
         constexpr colorize(uint32_t color, T value) : color(color), value(value) {}
+
+        constexpr operator std::string() { return std::format("{}", *this); }
     };
 
     template <typename T>

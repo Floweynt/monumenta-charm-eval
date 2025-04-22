@@ -1,0 +1,6 @@
+build
+bin
+a.out 
+compile_commands.json
+.cache 
+.vim 

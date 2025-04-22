@@ -1,0 +1,43 @@
+#pragma once
+
+#include "src/charm.h"
+#include "src/eval.h"
+#include <cstdint>
+#include <string>
+#include <string_view>
+#include <unordered_map>
+#include <vector>
+
+namespace mtce
+{
+    struct cli_options
+    {
+        std::string_view config;
+        std::string_view charm_input_file;
+    };
+
+    struct config
+    {
+        std::uint8_t max_cp;
+        std::unordered_map<std::string, std::int32_t> ability_weights;
+
+        [[nodiscard]] constexpr auto to_weights() const -> charm_weights
+        {
+            charm_weights weights{};
+
+            for (const auto& [name, value] : ability_weights)
+            {
+                if (NAME_TO_ID.contains(name))
+                {
+                    weights.at(NAME_TO_ID.at(name)) = value;
+                }
+            }
+
+            return weights;
+        }
+    };
+
+    auto parse_args(int argc, const char* const* argv) -> cli_options;
+    auto read_config(const std::string& path) -> config;
+    auto read_charms(const std::string& path) -> std::vector<charm>;
+} // namespace mtce

@@ -1,0 +1,5459 @@
+[
+    {
+        "effectName": "Bottled Sunlight Cooldown",
+        "ability": "Bottled Sunlight",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Bottled Sunlight Absorption Health",
+        "ability": "Bottled Sunlight",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 10.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Bottled Sunlight Absorption Duration",
+        "ability": "Bottled Sunlight",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0
+        ]
+    },
+    {
+        "effectName": "Bottled Sunlight Bottle Velocity",
+        "ability": "Bottled Sunlight",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 100.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 4,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Divine Beam Cooldown",
+        "ability": "Divine Beam",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Divine Beam Size",
+        "ability": "Divine Beam",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Divine Beam Healing",
+        "ability": "Divine Beam",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Divine Beam Stun Duration",
+        "ability": "Divine Beam",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 2.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+        ]
+    },
+    {
+        "effectName": "Divine Beam Max Targets Bonus",
+        "ability": "Divine Beam",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 5.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0
+        ]
+    },
+    {
+        "effectName": "Divine Beam Max Absorption",
+        "ability": "Divine Beam",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 6.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0
+        ]
+    },
+    {
+        "effectName": "Divine Beam Absorption Duration",
+        "ability": "Divine Beam",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 10.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            2.0,
+            4.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Enlightenment Experience Multiplier",
+        "ability": "Enlightenment",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Enlightenment Rarity Increase Chance",
+        "ability": "Enlightenment",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 1.0,
+        "effectCap": 10.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Eternal Savior Cooldown",
+        "ability": "Eternal Savior",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Eternal Savior Healing",
+        "ability": "Eternal Savior",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Eternal Savior Radius",
+        "ability": "Eternal Savior",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Eternal Savior Absorption",
+        "ability": "Eternal Savior",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 10.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Eternal Savior Absorption Duration",
+        "ability": "Eternal Savior",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0
+        ]
+    },
+    {
+        "effectName": "Eternal Savior Stun Duration",
+        "ability": "Eternal Savior",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 2.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+        ]
+    },
+    {
+        "effectName": "Lightning Bottle Damage",
+        "ability": "Lightning Bottle",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Lightning Bottle Radius",
+        "ability": "Lightning Bottle",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Lightning Bottle Slowness Amplifier",
+        "ability": "Lightning Bottle",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 15.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            4.0,
+            5.0,
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "effectName": "Lightning Bottle Vulnerability Amplifier",
+        "ability": "Lightning Bottle",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 15.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            4.0,
+            5.0,
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "effectName": "Lightning Bottle Debuff Duration",
+        "ability": "Lightning Bottle",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 5.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Lightning Bottle Max Stacks",
+        "ability": "Lightning Bottle",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 10.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            2.0,
+            4.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Lightning Bottle Kill Threshold",
+        "ability": "Lightning Bottle",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": -1.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+        ]
+    },
+    {
+        "effectName": "Radiant Blessing Cooldown",
+        "ability": "Radiant Blessing",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Radiant Blessing Radius",
+        "ability": "Radiant Blessing",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Radiant Blessing Strength Amplifier",
+        "ability": "Radiant Blessing",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.4,
+            3.6,
+            4.8,
+            6.0,
+            7.2
+        ]
+    },
+    {
+        "effectName": "Radiant Blessing Resistance Amplifier",
+        "ability": "Radiant Blessing",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 15.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            2.0,
+            4.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Radiant Blessing Buff Duration",
+        "ability": "Radiant Blessing",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 5.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Rejuvenation Radius",
+        "ability": "Rejuvenation",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Rejuvenation Healing",
+        "ability": "Rejuvenation",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 20.0,
+        "effectCap": 100.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Soothing Combos Hit Requirement",
+        "ability": "Soothing Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": -1.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+        ]
+    },
+    {
+        "effectName": "Soothing Combos Range",
+        "ability": "Soothing Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Soothing Combos Healing",
+        "ability": "Soothing Combos",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Soothing Combos Speed Amplifier",
+        "ability": "Soothing Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Soothing Combos Haste Level",
+        "ability": "Soothing Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 1.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Soothing Combos Buff Duration",
+        "ability": "Soothing Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 5.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Spark of Inspiration Cooldown",
+        "ability": "Spark of Inspiration",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 4.0,
+        "effectCap": -30.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Spark of Inspiration Cast Range",
+        "ability": "Spark of Inspiration",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Spark of Inspiration Cooldown Reduction Rate",
+        "ability": "Spark of Inspiration",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": 40.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            6.0,
+            9.0,
+            12.0,
+            15.0,
+            18.0
+        ]
+    },
+    {
+        "effectName": "Spark of Inspiration Strength Amplifier",
+        "ability": "Spark of Inspiration",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            3.0,
+            4.5,
+            6.0,
+            7.5,
+            9.0
+        ]
+    },
+    {
+        "effectName": "Spark of Inspiration Buff Duration",
+        "ability": "Spark of Inspiration",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 3.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.5,
+            1.0,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Spark of Inspiration Resistance Duration",
+        "ability": "Spark of Inspiration",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 2.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.5,
+            0.75,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Sundrops Drop Chance",
+        "ability": "Sundrops",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 30.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            3.0,
+            6.0,
+            9.0,
+            12.0,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Sundrops Linger Time",
+        "ability": "Sundrops",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Sundrops Speed Amplifier",
+        "ability": "Sundrops",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 30.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Sundrops Resistance Amplifier",
+        "ability": "Sundrops",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 1.0,
+        "effectCap": 10.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            2.5,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Sundrops Buff Duration",
+        "ability": "Sundrops",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 8.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Ward of Light Cooldown",
+        "ability": "Ward of Light",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Ward of Light Healing",
+        "ability": "Ward of Light",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Ward of Light Heal Radius",
+        "ability": "Ward of Light",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Ward of Light Cone Angle",
+        "ability": "Ward of Light",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 100.0,
+        "tree": "Dawnbringer",
+        "maxRarity": 4,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Bramble Shell Damage",
+        "ability": "Bramble Shell",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Bulwark Cooldown",
+        "ability": "Bulwark",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Crushing Earth Cooldown",
+        "ability": "Crushing Earth",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Crushing Earth Damage",
+        "ability": "Crushing Earth",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Crushing Earth Range",
+        "ability": "Crushing Earth",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Crushing Earth Stun Duration",
+        "ability": "Crushing Earth",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 2.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+        ]
+    },
+    {
+        "effectName": "Earthen Combos Hit Requirement",
+        "ability": "Earthen Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": -1.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+        ]
+    },
+    {
+        "effectName": "Earthen Combos Resistance Amplifier",
+        "ability": "Earthen Combos",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 15.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0
+        ]
+    },
+    {
+        "effectName": "Earthen Combos Buff Duration",
+        "ability": "Earthen Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 5.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Earthen Combos Root Duration",
+        "ability": "Earthen Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 2.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+        ]
+    },
+    {
+        "effectName": "Earthen Wrath Cooldown",
+        "ability": "Earthen Wrath",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Earthen Wrath Damage Reflected",
+        "ability": "Earthen Wrath",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Earthen Wrath Damage Reduction",
+        "ability": "Earthen Wrath",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 15.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0
+        ]
+    },
+    {
+        "effectName": "Earthen Wrath Transfer Radius",
+        "ability": "Earthen Wrath",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Earthen Wrath Radius",
+        "ability": "Earthen Wrath",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Earthen Wrath Duration",
+        "ability": "Earthen Wrath",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 2.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Earthquake Cooldown",
+        "ability": "Earthquake",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Earthquake Damage",
+        "ability": "Earthquake",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Earthquake Radius",
+        "ability": "Earthquake",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Earthquake Knockback",
+        "ability": "Earthquake",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 100.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            20.0,
+            40.0
+        ]
+    },
+    {
+        "effectName": "Earthquake Silence Duration",
+        "ability": "Earthquake",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 10.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Entrench Cooldown",
+        "ability": "Entrench",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Entrench Knockback",
+        "ability": "Entrench",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 100.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0
+        ]
+    },
+    {
+        "effectName": "Entrench Radius",
+        "ability": "Entrench",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Entrench Root Duration",
+        "ability": "Entrench",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 2.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+        ]
+    },
+    {
+        "effectName": "Iron Grip Cooldown",
+        "ability": "Iron Grip",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Iron Grip Damage",
+        "ability": "Iron Grip",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Iron Grip Radius",
+        "ability": "Iron Grip",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Iron Grip Cast Range",
+        "ability": "Iron Grip",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Iron Grip Root Duration",
+        "ability": "Iron Grip",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 2.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.75,
+            1.0,
+            1.25
+        ]
+    },
+    {
+        "effectName": "Iron Grip Resistance Amplifier",
+        "ability": "Iron Grip",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 15.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.5,
+            3.0,
+            4.5,
+            6.0,
+            7.5
+        ]
+    },
+    {
+        "effectName": "Iron Grip Resistance Duration",
+        "ability": "Iron Grip",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 5.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Taunt Cooldown",
+        "ability": "Taunt",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Taunt Damage Bonus",
+        "ability": "Taunt",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Taunt Range",
+        "ability": "Taunt",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Taunt Absorption Per Mob",
+        "ability": "Taunt",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.1,
+        "effectCap": 1.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
+        ]
+    },
+    {
+        "effectName": "Taunt Max Absorption Mobs",
+        "ability": "Taunt",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 5.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0
+        ]
+    },
+    {
+        "effectName": "Taunt Absorption Duration",
+        "ability": "Taunt",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 10.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Toughness Max Health",
+        "ability": "Toughness",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": 20.0,
+        "tree": "Earthbound",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0
+        ]
+    },
+    {
+        "effectName": "Apocalypse Cooldown",
+        "ability": "Apocalypse",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Apocalypse Damage",
+        "ability": "Apocalypse",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Apocalypse Radius",
+        "ability": "Apocalypse",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Apocalypse Healing",
+        "ability": "Apocalypse",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Apocalypse Max Absorption",
+        "ability": "Apocalypse",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 30.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            10.0,
+            20.0
+        ]
+    },
+    {
+        "effectName": "Detonation Damage",
+        "ability": "Detonation",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Detonation Damage Radius",
+        "ability": "Detonation",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Detonation Death Radius",
+        "ability": "Detonation",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Fireball Cooldown",
+        "ability": "Fireball",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Fireball Damage",
+        "ability": "Fireball",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Fireball Radius",
+        "ability": "Fireball",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Fireball Velocity",
+        "ability": "Fireball",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 100.0,
+        "tree": "Flamecaller",
+        "maxRarity": 4,
+        "rarityValues": [
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0
+        ]
+    },
+    {
+        "effectName": "Fireball Fire Duration",
+        "ability": "Fireball",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 10.0,
+        "tree": "Flamecaller",
+        "maxRarity": 3,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Flame Spirit Cooldown",
+        "ability": "Flame Spirit",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Flame Spirit Damage",
+        "ability": "Flame Spirit",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Flame Spirit Radius",
+        "ability": "Flame Spirit",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Flame Spirit Fire Duration",
+        "ability": "Flame Spirit",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 10.0,
+        "tree": "Flamecaller",
+        "maxRarity": 3,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Flame Spirit Duration",
+        "ability": "Flame Spirit",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 4.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0
+        ]
+    },
+    {
+        "effectName": "Flamestrike Cooldown",
+        "ability": "Flamestrike",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Flamestrike Damage",
+        "ability": "Flamestrike",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Flamestrike Range",
+        "ability": "Flamestrike",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Flamestrike Cone Angle",
+        "ability": "Flamestrike",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 100.0,
+        "tree": "Flamecaller",
+        "maxRarity": 4,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Flamestrike Fire Duration",
+        "ability": "Flamestrike",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 10.0,
+        "tree": "Flamecaller",
+        "maxRarity": 3,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Flamestrike Knockback",
+        "ability": "Flamestrike",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 100.0,
+        "tree": "Flamecaller",
+        "maxRarity": 4,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Igneous Rune Cooldown",
+        "ability": "Igneous Rune",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Igneous Rune Damage",
+        "ability": "Igneous Rune",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Igneous Rune Radius",
+        "ability": "Igneous Rune",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Igneous Rune Fire Duration",
+        "ability": "Igneous Rune",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 10.0,
+        "tree": "Flamecaller",
+        "maxRarity": 3,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Igneous Rune Buff Amplifier",
+        "ability": "Igneous Rune",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0
+        ]
+    },
+    {
+        "effectName": "Igneous Rune Buff Duration",
+        "ability": "Igneous Rune",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 6.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0
+        ]
+    },
+    {
+        "effectName": "Igneous Rune Arming Time",
+        "ability": "Igneous Rune",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": -1.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            -0.5,
+            -1.0
+        ]
+    },
+    {
+        "effectName": "Primordial Mastery Damage Multiplier",
+        "ability": "Primordial Mastery",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 10.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            2.5,
+            4.0,
+            5.5,
+            7.5
+        ]
+    },
+    {
+        "effectName": "Pyroblast Cooldown",
+        "ability": "Pyroblast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Pyroblast Damage",
+        "ability": "Pyroblast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Pyroblast Radius",
+        "ability": "Pyroblast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Pyroblast Fire Duration",
+        "ability": "Pyroblast",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 10.0,
+        "tree": "Flamecaller",
+        "maxRarity": 3,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Pyromania Damage Per Mob",
+        "ability": "Pyromania",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 1.0,
+        "effectCap": 8.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.8,
+            1.6,
+            2.4,
+            3.2,
+            4.0
+        ]
+    },
+    {
+        "effectName": "Pyromania Radius",
+        "ability": "Pyromania",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Volcanic Combos Cooldown",
+        "ability": "Volcanic Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Volcanic Combos Damage",
+        "ability": "Volcanic Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Volcanic Combos Radius",
+        "ability": "Volcanic Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Volcanic Combos Fire Duration",
+        "ability": "Volcanic Combos",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 10.0,
+        "tree": "Flamecaller",
+        "maxRarity": 3,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Volcanic Meteor Cooldown",
+        "ability": "Volcanic Meteor",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Volcanic Meteor Damage",
+        "ability": "Volcanic Meteor",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Volcanic Meteor Radius",
+        "ability": "Volcanic Meteor",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Flamecaller",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Volcanic Meteor Fire Duration",
+        "ability": "Volcanic Meteor",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 10.0,
+        "tree": "Flamecaller",
+        "maxRarity": 3,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Avalanche Cooldown",
+        "ability": "Avalanche",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Avalanche Damage",
+        "ability": "Avalanche",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Avalanche Range",
+        "ability": "Avalanche",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Avalanche Root Duration",
+        "ability": "Avalanche",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 2.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+        ]
+    },
+    {
+        "effectName": "Cryobox Cooldown",
+        "ability": "Cryobox",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Cryobox Absorption Health",
+        "ability": "Cryobox",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 10.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Cryobox Absorption Duration",
+        "ability": "Cryobox",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0
+        ]
+    },
+    {
+        "effectName": "Cryobox Ice Duration",
+        "ability": "Cryobox",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 0.0,
+        "tree": "Frostborn",
+        "maxRarity": 3,
+        "rarityValues": [
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Cryobox Frozen Duration",
+        "ability": "Cryobox",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 6.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0
+        ]
+    },
+    {
+        "effectName": "Snowstorm Cooldown",
+        "ability": "Snowstorm",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Snowstorm Damage",
+        "ability": "Snowstorm",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Snowstorm Radius",
+        "ability": "Snowstorm",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Snowstorm Slowness per Stack",
+        "ability": "Snowstorm",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 20.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0
+        ]
+    },
+    {
+        "effectName": "Snowstorm Slowness Duration",
+        "ability": "Snowstorm",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 5.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Snowstorm Freeze Duration",
+        "ability": "Snowstorm",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 2.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Snowstorm Ice Duration",
+        "ability": "Snowstorm",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 0.0,
+        "tree": "Frostborn",
+        "maxRarity": 3,
+        "rarityValues": [
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Frigid Combos Cooldown",
+        "ability": "Frigid Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Frigid Combos Damage",
+        "ability": "Frigid Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Frigid Combos Radius",
+        "ability": "Frigid Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Frigid Combos Slowness Amplifier",
+        "ability": "Frigid Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Frigid Combos Slowness Duration",
+        "ability": "Frigid Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Frozen Domain Healing",
+        "ability": "Frozen Domain",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 20.0,
+        "effectCap": 100.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Frozen Domain Speed Amplifier",
+        "ability": "Frozen Domain",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": 30.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            4.0,
+            8.0,
+            12.0
+        ]
+    },
+    {
+        "effectName": "Frozen Domain Duration",
+        "ability": "Frozen Domain",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 5.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Ice Barrier Cooldown",
+        "ability": "Ice Barrier",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Ice Barrier Cast Range",
+        "ability": "Ice Barrier",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 20.0,
+        "effectCap": 100.0,
+        "tree": "Frostborn",
+        "maxRarity": 4,
+        "rarityValues": [
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Ice Barrier Max Length",
+        "ability": "Ice Barrier",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 20.0,
+        "effectCap": 100.0,
+        "tree": "Frostborn",
+        "maxRarity": 4,
+        "rarityValues": [
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Ice Barrier Damage",
+        "ability": "Ice Barrier",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Ice Barrier Ice Duration",
+        "ability": "Ice Barrier",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 0.0,
+        "tree": "Frostborn",
+        "maxRarity": 3,
+        "rarityValues": [
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Icebreaker Ice Damage Multiplier",
+        "ability": "Icebreaker",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.8,
+            4.2,
+            5.6,
+            7.0,
+            8.4
+        ]
+    },
+    {
+        "effectName": "Icebreaker Debuff Damage Multiplier",
+        "ability": "Icebreaker",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.8,
+            4.2,
+            5.6,
+            7.0,
+            8.4
+        ]
+    },
+    {
+        "effectName": "Ice Lance Cooldown",
+        "ability": "Ice Lance",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Ice Lance Damage",
+        "ability": "Ice Lance",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Ice Lance Range",
+        "ability": "Ice Lance",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Ice Lance Debuff Amplifier",
+        "ability": "Ice Lance",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Ice Lance Debuff Duration",
+        "ability": "Ice Lance",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Ice Lance Ice Duration",
+        "ability": "Ice Lance",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 0.0,
+        "tree": "Frostborn",
+        "maxRarity": 3,
+        "rarityValues": [
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Permafrost Debuff Duration",
+        "ability": "Permafrost",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 5.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Permafrost Ice Duration",
+        "ability": "Permafrost",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 2.0,
+        "effectCap": 0.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Permafrost Radius",
+        "ability": "Permafrost",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Permafrost Slowness Amplifier",
+        "ability": "Permafrost",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 15.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            4.0,
+            5.0,
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "effectName": "Permafrost Vulnerability Amplifier",
+        "ability": "Permafrost",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 15.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            4.0,
+            5.0,
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "effectName": "Piercing Cold Cooldown",
+        "ability": "Piercing Cold",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Piercing Cold Damage",
+        "ability": "Piercing Cold",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Frostborn",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Piercing Cold Ice Duration",
+        "ability": "Piercing Cold",
+        "isOnlyPositive": false,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 0.0,
+        "tree": "Frostborn",
+        "maxRarity": 3,
+        "rarityValues": [
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Advancing Shadows Cooldown",
+        "ability": "Advancing Shadows",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Advancing Shadows Range",
+        "ability": "Advancing Shadows",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Advancing Shadows Damage Multiplier",
+        "ability": "Advancing Shadows",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            7.5,
+            11.25,
+            15.0,
+            18.75,
+            22.5
+        ]
+    },
+    {
+        "effectName": "Advancing Shadows Duration",
+        "ability": "Advancing Shadows",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            1.25,
+            1.5,
+            1.75,
+            2.0
+        ]
+    },
+    {
+        "effectName": "Blade Flurry Cooldown",
+        "ability": "Blade Flurry",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Blade Flurry Damage",
+        "ability": "Blade Flurry",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Blade Flurry Radius",
+        "ability": "Blade Flurry",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Blade Flurry Silence Duration",
+        "ability": "Blade Flurry",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Brutalize Damage",
+        "ability": "Brutalize",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Brutalize Radius",
+        "ability": "Brutalize",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            10.0,
+            20.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Chaos Dagger Cooldown",
+        "ability": "Chaos Dagger",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Chaos Dagger Damage Multiplier",
+        "ability": "Chaos Dagger",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 80.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Chaos Dagger Velocity",
+        "ability": "Chaos Dagger",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 100.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 4,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Chaos Dagger Stun Duration",
+        "ability": "Chaos Dagger",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Chaos Dagger Stealth Duration",
+        "ability": "Chaos Dagger",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Cloak of Shadows Cooldown",
+        "ability": "Cloak of Shadows",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Cloak of Shadows Damage Multiplier",
+        "ability": "Cloak of Shadows",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 80.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Cloak of Shadows Stealth Duration",
+        "ability": "Cloak of Shadows",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Cloak of Shadows Weaken Amplifier",
+        "ability": "Cloak of Shadows",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Cloak of Shadows Weaken Duration",
+        "ability": "Cloak of Shadows",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 5.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Cloak of Shadows Radius",
+        "ability": "Cloak of Shadows",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Dark Combos Hit Requirement",
+        "ability": "Dark Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": -1.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+        ]
+    },
+    {
+        "effectName": "Dark Combos Vulnerability Amplifier",
+        "ability": "Dark Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 25.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            6.5,
+            8.25,
+            10.0,
+            11.75,
+            13.5
+        ]
+    },
+    {
+        "effectName": "Dark Combos Vulnerability Duration",
+        "ability": "Dark Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 3.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Deadly Strike Damage Multiplier",
+        "ability": "Deadly Strike",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 10.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.6,
+            3.2,
+            4.8,
+            6.4,
+            8.0
+        ]
+    },
+    {
+        "effectName": "Dethroner Elite Damage Multiplier",
+        "ability": "Dethroner",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            3.2,
+            4.8,
+            6.4,
+            8.0,
+            9.6
+        ]
+    },
+    {
+        "effectName": "Dethroner Boss Damage Multiplier",
+        "ability": "Dethroner",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            3.2,
+            4.8,
+            6.4,
+            8.0,
+            9.6
+        ]
+    },
+    {
+        "effectName": "Dummy Decoy Cooldown",
+        "ability": "Dummy Decoy",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Dummy Decoy Health",
+        "ability": "Dummy Decoy",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 0.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0
+        ]
+    },
+    {
+        "effectName": "Dummy Decoy Stun Duration",
+        "ability": "Dummy Decoy",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Dummy Decoy Max Life Duration",
+        "ability": "Dummy Decoy",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 1.0,
+        "effectCap": 5.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0
+        ]
+    },
+    {
+        "effectName": "Dummy Decoy Aggro Radius",
+        "ability": "Dummy Decoy",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Dummy Decoy Stun Radius",
+        "ability": "Dummy Decoy",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Escape Artist Cooldown",
+        "ability": "Escape Artist",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Escape Artist Stealth Duration",
+        "ability": "Escape Artist",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Escape Artist Max Teleport Distance",
+        "ability": "Escape Artist",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 20.0,
+        "effectCap": 100.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Escape Artist Stun Radius",
+        "ability": "Escape Artist",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Escape Artist Stun Duration",
+        "ability": "Escape Artist",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Phantom Force Cooldown",
+        "ability": "Phantom Force",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Phantom Force Spawn Count",
+        "ability": "Phantom Force",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 3.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0
+        ]
+    },
+    {
+        "effectName": "Phantom Force Damage",
+        "ability": "Phantom Force",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Phantom Force Weaken Amplifier",
+        "ability": "Phantom Force",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Phantom Force Weaken Duration",
+        "ability": "Phantom Force",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 5.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Phantom Force Radius",
+        "ability": "Phantom Force",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Phantom Force Vex Duration",
+        "ability": "Phantom Force",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 10.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Phantom Force Movement Speed",
+        "ability": "Phantom Force",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Shadow Slam Damage",
+        "ability": "Shadow Slam",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Shadow Slam Radius",
+        "ability": "Shadow Slam",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Shadowdancer",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Firework Blast Cooldown",
+        "ability": "Firework Blast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Firework Blast Damage",
+        "ability": "Firework Blast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Firework Blast Damage Per Block",
+        "ability": "Firework Blast",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 5.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0
+        ]
+    },
+    {
+        "effectName": "Firework Blast Damage Cap",
+        "ability": "Firework Blast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 100.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Firework Blast Radius",
+        "ability": "Firework Blast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Focused Combos Hit Requirement",
+        "ability": "Focused Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": -1.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+        ]
+    },
+    {
+        "effectName": "Focused Combos Damage Multiplier",
+        "ability": "Focused Combos",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 30.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Focused Combos Bleed Amplifier",
+        "ability": "Focused Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Steelsage",
+        "maxRarity": 4,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Focused Combos Bleed Duration",
+        "ability": "Focused Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Steelsage",
+        "maxRarity": 3,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Gravity Bomb Cooldown",
+        "ability": "Gravity Bomb",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Gravity Bomb Damage",
+        "ability": "Gravity Bomb",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Gravity Bomb Radius",
+        "ability": "Gravity Bomb",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Rapid Fire Cooldown",
+        "ability": "Rapid Fire",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Rapid Fire Arrows",
+        "ability": "Rapid Fire",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 6.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            1.0,
+            2.0,
+            3.0
+        ]
+    },
+    {
+        "effectName": "Rapid Fire Damage",
+        "ability": "Rapid Fire",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Rapid Fire Firerate",
+        "ability": "Rapid Fire",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 50.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            50.0
+        ]
+    },
+    {
+        "effectName": "Scrapshot Cooldown",
+        "ability": "Scrapshot",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Scrapshot Damage",
+        "ability": "Scrapshot",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Scrapshot Range",
+        "ability": "Scrapshot",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Scrapshot Recoil Velocity",
+        "ability": "Scrapshot",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 100.0,
+        "tree": "Steelsage",
+        "maxRarity": 4,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Scrapshot Shrapnel Cone Angle",
+        "ability": "Scrapshot",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 100.0,
+        "tree": "Steelsage",
+        "maxRarity": 4,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Sharpshooter Damage Multiplier",
+        "ability": "Sharpshooter",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 10.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.25,
+            4.5,
+            6.75,
+            9.0,
+            11.25
+        ]
+    },
+    {
+        "effectName": "Sharpshooter Damage Per Stack",
+        "ability": "Sharpshooter",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 0.25,
+        "effectCap": 3.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.75,
+            1.125,
+            1.5,
+            1.875,
+            2.25
+        ]
+    },
+    {
+        "effectName": "Sharpshooter Decay Timer",
+        "ability": "Sharpshooter",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 2.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.5,
+            0.75,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Sharpshooter Max Stacks",
+        "ability": "Sharpshooter",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 4.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            2.0
+        ]
+    },
+    {
+        "effectName": "Sidearm Charges",
+        "ability": "Sidearm",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 1.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Sidearm Cooldown",
+        "ability": "Sidearm",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Sidearm Damage",
+        "ability": "Sidearm",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Sidearm Range",
+        "ability": "Sidearm",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Sidearm Kill Cooldown Reduction",
+        "ability": "Sidearm",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 1.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Split Arrow Damage",
+        "ability": "Split Arrow",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 40.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Split Arrow Bounces",
+        "ability": "Split Arrow",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 1.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Split Arrow Range",
+        "ability": "Split Arrow",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Steel Stallion Cooldown",
+        "ability": "Steel Stallion",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Steel Stallion Health",
+        "ability": "Steel Stallion",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 0.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0
+        ]
+    },
+    {
+        "effectName": "Steel Stallion Horse Speed",
+        "ability": "Steel Stallion",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 0.0,
+        "tree": "Steelsage",
+        "maxRarity": 4,
+        "rarityValues": [
+            3.0,
+            6.0,
+            9.0,
+            12.0,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Steel Stallion Jump Strength",
+        "ability": "Steel Stallion",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.1,
+        "effectCap": 0.0,
+        "tree": "Steelsage",
+        "maxRarity": 4,
+        "rarityValues": [
+            0.05,
+            0.1,
+            0.15,
+            0.2,
+            0.25
+        ]
+    },
+    {
+        "effectName": "Steel Stallion Duration",
+        "ability": "Steel Stallion",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 2.0,
+        "effectCap": 10.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0
+        ]
+    },
+    {
+        "effectName": "Volley Cooldown",
+        "ability": "Volley",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Volley Damage Multiplier",
+        "ability": "Volley",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 60.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            11.5,
+            23.0,
+            34.5
+        ]
+    },
+    {
+        "effectName": "Volley Arrows",
+        "ability": "Volley",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 3.0,
+        "effectCap": 0.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0
+        ]
+    },
+    {
+        "effectName": "Volley Piercing",
+        "ability": "Volley",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 2.0,
+        "tree": "Steelsage",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Aeroblast Cooldown",
+        "ability": "Aeroblast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Aeroblast Damage",
+        "ability": "Aeroblast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Aeroblast Size",
+        "ability": "Aeroblast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Aeroblast Knockback",
+        "ability": "Aeroblast",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 100.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            20.0,
+            25.0,
+            30.0,
+            35.0,
+            40.0
+        ]
+    },
+    {
+        "effectName": "Aeroblast Speed Duration",
+        "ability": "Aeroblast",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 6.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0
+        ]
+    },
+    {
+        "effectName": "Aeroblast Speed Amplifier",
+        "ability": "Aeroblast",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Aeromancy Player Damage Multiplier",
+        "ability": "Aeromancy",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.4,
+            3.6,
+            4.8,
+            6.0,
+            7.2
+        ]
+    },
+    {
+        "effectName": "Aeromancy Mob Damage Multiplier",
+        "ability": "Aeromancy",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 20.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            2.4,
+            3.6,
+            4.8,
+            6.0,
+            7.2
+        ]
+    },
+    {
+        "effectName": "Dodging Cooldown",
+        "ability": "Dodging",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Guarding Bolt Cooldown",
+        "ability": "Guarding Bolt",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Guarding Bolt Damage",
+        "ability": "Guarding Bolt",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Guarding Bolt Radius",
+        "ability": "Guarding Bolt",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Guarding Bolt Stun Duration",
+        "ability": "Guarding Bolt",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Guarding Bolt Cast Range",
+        "ability": "Guarding Bolt",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Last Breath Cooldown",
+        "ability": "Last Breath",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Last Breath Cooldown Reduction",
+        "ability": "Last Breath",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 10.0,
+        "effectCap": 50.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Last Breath Speed Amplifier",
+        "ability": "Last Breath",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Last Breath Speed Duration",
+        "ability": "Last Breath",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 6.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0
+        ]
+    },
+    {
+        "effectName": "Last Breath Resistance Duration",
+        "ability": "Last Breath",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 3.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.5,
+            0.75,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Last Breath Radius",
+        "ability": "Last Breath",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "One with the Wind Speed Amplifier",
+        "ability": "One with the Wind",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "One with the Wind Resistance Amplifier",
+        "ability": "One with the Wind",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 1.0,
+        "effectCap": 10.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            2.0,
+            3.0,
+            4.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "One with the Wind Range",
+        "ability": "One with the Wind",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": -3.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            -2.0
+        ]
+    },
+    {
+        "effectName": "Restoring Draft Healing",
+        "ability": "Restoring Draft",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 20.0,
+        "effectCap": 150.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            15.0,
+            30.0,
+            45.0,
+            60.0,
+            75.0
+        ]
+    },
+    {
+        "effectName": "Restoring Draft Block Cap",
+        "ability": "Restoring Draft",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 2.0,
+        "effectCap": 0.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            3.0,
+            6.0,
+            9.0,
+            12.0,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Skyhook Cooldown",
+        "ability": "Skyhook",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Skyhook Cooldown Reduction Per Block",
+        "ability": "Skyhook",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 1.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ]
+    },
+    {
+        "effectName": "Thundercloud Form Cooldown",
+        "ability": "Thundercloud Form",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Thundercloud Form Damage",
+        "ability": "Thundercloud Form",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 80.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Thundercloud Form Radius",
+        "ability": "Thundercloud Form",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Thundercloud Form Knockback",
+        "ability": "Thundercloud Form",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Thundercloud Form Flight Speed",
+        "ability": "Thundercloud Form",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 40.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            10.0,
+            15.0,
+            20.0,
+            25.0
+        ]
+    },
+    {
+        "effectName": "Thundercloud Form Flight Duration",
+        "ability": "Thundercloud Form",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": 4.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Whirlwind Cooldown",
+        "ability": "Whirlwind",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Whirlwind Cooldown Reduction",
+        "ability": "Whirlwind",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 10.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            2.0,
+            3.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Whirlwind Speed Amplifier",
+        "ability": "Whirlwind",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Whirlwind Speed Duration",
+        "ability": "Whirlwind",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 6.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0
+        ]
+    },
+    {
+        "effectName": "Windswept Combos Hit Requirement",
+        "ability": "Windswept Combos",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.0,
+        "effectCap": -1.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+        ]
+    },
+    {
+        "effectName": "Windswept Combos Cooldown Reduction",
+        "ability": "Windswept Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 2.0,
+        "effectCap": 10.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.0,
+            0.0,
+            2.0,
+            3.0,
+            5.0
+        ]
+    },
+    {
+        "effectName": "Windswept Combos Radius",
+        "ability": "Windswept Combos",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 50.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Windswept Combos Pull Strength",
+        "ability": "Windswept Combos",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 40.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            10.0,
+            15.0,
+            20.0,
+            25.0,
+            30.0
+        ]
+    },
+    {
+        "effectName": "Wind Walk Cooldown",
+        "ability": "Wind Walk",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 3.0,
+        "effectCap": -30.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            -5.0,
+            -7.5,
+            -10.0,
+            -12.5,
+            -15.0
+        ]
+    },
+    {
+        "effectName": "Wind Walk Velocity",
+        "ability": "Wind Walk",
+        "isOnlyPositive": true,
+        "isPercent": true,
+        "variance": 0.0,
+        "effectCap": 100.0,
+        "tree": "Windwalker",
+        "maxRarity": 4,
+        "rarityValues": [
+            0.0,
+            0.0,
+            20.0,
+            40.0,
+            60.0
+        ]
+    },
+    {
+        "effectName": "Wind Walk Vulnerability Amplifier",
+        "ability": "Wind Walk",
+        "isOnlyPositive": false,
+        "isPercent": true,
+        "variance": 5.0,
+        "effectCap": 40.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            5.0,
+            7.5,
+            10.0,
+            12.5,
+            15.0
+        ]
+    },
+    {
+        "effectName": "Wind Walk Vulnerability Duration",
+        "ability": "Wind Walk",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.5,
+        "effectCap": 5.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5
+        ]
+    },
+    {
+        "effectName": "Wind Walk Levitation Duration",
+        "ability": "Wind Walk",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 4.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5
+        ]
+    },
+    {
+        "effectName": "Wind Walk Stun Duration",
+        "ability": "Wind Walk",
+        "isOnlyPositive": true,
+        "isPercent": false,
+        "variance": 0.25,
+        "effectCap": 2.0,
+        "tree": "Windwalker",
+        "maxRarity": 5,
+        "rarityValues": [
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+        ]
+    }
+]

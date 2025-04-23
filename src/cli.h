@@ -2,18 +2,28 @@
 
 #include "src/charm.h"
 #include "src/eval.h"
+#include <cstddef>
 #include <cstdint>
 #include <string>
 #include <string_view>
 #include <unordered_map>
+#include <variant>
 #include <vector>
 
 namespace mtce
 {
+    struct naive_algo_flags
+    {
+        size_t threads;
+    };
+
+    using algo_info_t = std::variant<naive_algo_flags>;
+
     struct cli_options
     {
         std::string_view config;
         std::string_view charm_input_file;
+        algo_info_t algo;
     };
 
     struct config

@@ -6,6 +6,7 @@
 #include <charconv>
 #include <cstdint>
 #include <cstdlib>
+#include <cstring>
 #include <format>
 #include <fstream>
 #include <iostream>
@@ -14,7 +15,9 @@
 #include <string>
 #include <string_view>
 #include <system_error>
+#include <thread>
 #include <utility>
+#include <variant>
 #include <vector>
 
 namespace mtce
@@ -25,10 +28,14 @@ namespace mtce
         {
             std::println(out, "usage: {} <args>", prog);
             std::println(out, "cli flags:");
-            std::println(out, "--help, -h               print this message");
-            std::println(out, "--version                print version");
-            std::println(out, "--config, -c [file]      specify configuration file");
-            std::println(out, "--in, -i [file]          specify input file");
+            std::println(out, "  --help, -h               print this message");
+            std::println(out, "  --version                print version");
+            std::println(out, "  --config, -c [file]      specify configuration file");
+            std::println(out, "  --in, -i [file]          specify input file");
+            std::println(out, "  --algo [name]            specify the charm evaluation algorithm");
+            std::println(out, "                           available options: naive");
+            std::println(out, "algorithm specific flags:");
+            std::println(out, "  --naive-threads [n]      [naive] specifies the number of threads to use");
         }
 
         auto parse_arg_generic(std::string_view arg, int& idx, int argc, const char* const* argv) -> std::string_view
@@ -42,6 +49,22 @@ namespace mtce
             const auto* res = argv[idx + 1];
             idx++;
             return res;
+        }
+
+        template <typename T>
+        auto parse_arg_typed(std::string_view arg, int& idx, int argc, const char* const* argv) -> T
+        {
+            auto arg_value = parse_arg_generic(arg, idx, argc, argv);
+            T value{};
+            auto [ptr, res] = std::from_chars(arg_value.begin(), arg_value.end(), value);
+
+            if (ptr != arg_value.end() || res != std::errc{})
+            {
+                std::println(std::cerr, "failed to parse argument {}", arg_value);
+                std::exit(-1);
+            }
+
+            return value;
         }
 
         constexpr auto read_cfg_int(size_t line_no, std::string_view value) -> int32_t
@@ -107,6 +130,10 @@ namespace mtce
     auto parse_args(int argc, const char* const* argv) -> cli_options
     {
         cli_options args;
+        args.algo = naive_algo_flags{
+            .threads = std::thread::hardware_concurrency(),
+        };
+
         std::string_view prog_name = argv[0];
 
         for (int i = 1; i < argc; i++)
@@ -133,6 +160,28 @@ namespace mtce
             else if (arg == "--in" || arg == "-i")
             {
                 args.charm_input_file = parse_arg_generic(arg, i, argc, argv);
+            }
+            else if (arg == "--algo")
+            {
+                auto algo_name = parse_arg_generic(arg, i, argc, argv);
+                if (algo_name == "naive")
+                {
+                    args.algo = naive_algo_flags{
+                        .threads = std::thread::hardware_concurrency(),
+                    };
+                }
+                else
+                {
+                    check(false, "unknown charm evaluation algorithm: {}", algo_name);
+                }
+            }
+            else if (arg == "--naive-threads" && std::holds_alternative<naive_algo_flags>(args.algo))
+            {
+                std::get<naive_algo_flags>(args.algo).threads = parse_arg_typed<uint16_t>(arg, i, argc, argv);
+            }
+            else
+            {
+                check(false, "unknown cli argument {}", arg);
             }
         }
 
@@ -266,9 +315,9 @@ namespace mtce
             if (parts.size() == 6)
             {
                 check(rarity < COLOR_BY_RARITY.size() - 1, "bad charm data on line {}: illegal rarity {}", line_no, rarity);
-                res.push_back(create_charm(
-                    charm_power, COLOR_BY_RARITY.at(rarity + 1), std::string(name) + " (u)", false, effect_ids, parts[5], line_no
-                ));
+                res.push_back(
+                    create_charm(charm_power, COLOR_BY_RARITY.at(rarity + 1), std::string(name) + " (u)", false, effect_ids, parts[5], line_no)
+                );
             }
         }
 

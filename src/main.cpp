@@ -15,6 +15,7 @@
 #include <ostream>
 #include <ratio>
 #include <string>
+#include <variant>
 #include <vector>
 
 using namespace mtce;
@@ -124,11 +125,23 @@ namespace
 
         print_charm_stats(charm_set_stats, config);
     }
+
+    struct algo_invoker
+    {
+        const std::vector<charm>& charms;
+        const config& config;
+
+        auto operator()(naive_algo_flags flags) -> eval_result
+        {
+            std::println(std::cout, "MTCE algorithm: " yellow("naive") " with " green("{}") " worker(s)", flags.threads);
+            return evaluate_naive(charms, config.max_cp, config.to_weights(), flags.threads);
+        }
+    };
 } // namespace
 
 auto main(int argc, const char* const* argv) -> int
 {
-    auto [config_file, in] = parse_args(argc, argv);
+    auto [config_file, in, algo] = parse_args(argc, argv);
     auto config = read_config(std::string(config_file));
     auto charms = read_charms(std::string(in));
 
@@ -149,9 +162,17 @@ auto main(int argc, const char* const* argv) -> int
         std::println(std::cout, "  {} (" green("{}") ")", colorize(charm.color, charm.name), charm.charm_power);
     }
 
-    std::println(std::cout, "MTCE algorithm: " yellow("naive") " with " green("{}") " workers", 1);
     auto start = std::chrono::high_resolution_clock::now();
-    auto result = evaluate_naive(charms, config.max_cp, config.to_weights());
+
+    // run the charm evaluation
+    auto result = std::visit(
+        algo_invoker{
+            .charms = charms,
+            .config = config,
+        },
+        algo
+    );
+
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> time = end - start;
     std::println(std::cout, "Charm eval took " green("{:.4f}") " milliseconds", time.count());

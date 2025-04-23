@@ -60,6 +60,11 @@ $ ./mtce --config config.conf --in charm_dataset.txt
 Replace `config.conf` with your configuration file, and `charm_dataset.txt` with the charm dataset. You can obtain this dataset using the 
 Flowey Monumenta Addons mod (version 1.8 or later).
 
+Advanced options (specifying different algorithms, etc) can be done with additional CLI flags. Use `--help` to see available options:
+```sh
+$ ./mtce --help
+```
+
 ## Future Work
 
 - [ ] Tree pruning  

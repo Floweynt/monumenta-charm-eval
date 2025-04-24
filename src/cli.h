@@ -1,7 +1,7 @@
 #pragma once
 
-#include "src/charm.h"
-#include "src/eval.h"
+#include "charm.h"
+#include "eval.h"
 #include <cstddef>
 #include <cstdint>
 #include <string>

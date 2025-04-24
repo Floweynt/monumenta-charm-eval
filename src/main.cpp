@@ -3,7 +3,7 @@
 #include "cli.h"
 #include "color.h"
 #include "eval.h"
-#include "src/charm_data.h"
+#include "charm_data.h"
 #include <array>
 #include <cctype>
 #include <chrono>

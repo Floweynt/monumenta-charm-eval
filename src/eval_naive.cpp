@@ -1,7 +1,7 @@
 #include "charm.h"
+#include "charm_data.h"
 #include "color.h"
 #include "eval.h"
-#include "src/charm_data.h"
 #include <algorithm>
 #include <array>
 #include <atomic>
@@ -18,14 +18,14 @@ namespace mtce
 {
     namespace
     {
-        inline static constexpr std::size_t ENCODED_CHARM_STAT_BITS = 26;
-        inline static constexpr int32_t ENCODED_CHARM_STAT_SCALE = (1 << ENCODED_CHARM_STAT_BITS) - 1;
+        inline constexpr std::size_t ENCODED_CHARM_STAT_BITS = 26;
+        inline constexpr int32_t ENCODED_CHARM_STAT_SCALE = (1 << ENCODED_CHARM_STAT_BITS) - 1;
 
 #ifdef IS_LANGUAGE_SERVER
-        inline static constexpr std::size_t DEFAULT_VECTOR_BLOCK = 512 / 8;
+        inline constexpr std::size_t DEFAULT_VECTOR_BLOCK = 512 / 8;
         // tunables
-        inline static constexpr std::size_t CHARM_STRUCT_ALGIN = DEFAULT_VECTOR_BLOCK;
-        inline static constexpr std::size_t TABLE_SIZE_ALIGN = ABILITY_COUNT;
+        inline constexpr std::size_t CHARM_STRUCT_ALGIN = DEFAULT_VECTOR_BLOCK;
+        inline constexpr std::size_t TABLE_SIZE_ALIGN = ABILITY_COUNT;
 #else
         inline static constexpr std::size_t DEFAULT_VECTOR_BLOCK = 512 / 8;
         // tunables

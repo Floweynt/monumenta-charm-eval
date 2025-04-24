@@ -1,7 +1,7 @@
 #pragma once
 
 #include "charm.h"
-#include "src/charm_data.h"
+#include "charm_data.h"
 #include <array>
 #include <cstddef>
 #include <cstdint>

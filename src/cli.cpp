@@ -1,7 +1,7 @@
 #include "cli.h"
 #include "build.h"
-#include "src/charm.h"
-#include "src/sv_manip.h"
+#include "charm.h"
+#include "sv_manip.h"
 #include <array>
 #include <charconv>
 #include <cstdint>

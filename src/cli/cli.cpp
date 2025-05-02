@@ -1,7 +1,7 @@
-#include "cli.h"
-#include "build.h"
-#include "charm.h"
-#include "sv_manip.h"
+#include "cli/cli.h"
+#include "build_config.h"
+#include "cli/sv_manip.h"
+#include "common/charm.h"
 #include <array>
 #include <charconv>
 #include <cstdint>
@@ -33,9 +33,11 @@ namespace mtce
             std::println(out, "  --config, -c [file]      specify configuration file");
             std::println(out, "  --in, -i [file]          specify input file");
             std::println(out, "  --algo [name]            specify the charm evaluation algorithm");
+            std::println(out, "  --benchmark [n]          enables benchmarking mode, specifying number of times to run for data");
             std::println(out, "                           available options: naive");
             std::println(out, "algorithm specific flags:");
             std::println(out, "  --naive-threads [n]      [naive] specifies the number of threads to use");
+            std::println(out, "  --naive-trace            [naive] enables tracing of pruning & other optimizations");
         }
 
         auto parse_arg_generic(std::string_view arg, int& idx, int argc, const char* const* argv) -> std::string_view
@@ -161,6 +163,10 @@ namespace mtce
             {
                 args.charm_input_file = parse_arg_generic(arg, i, argc, argv);
             }
+            else if (arg == "--benchmark")
+            {
+                check((args.benchmark = parse_arg_typed<uint32_t>(arg, i, argc, argv)) > 0, "--benchmark must be followed by number > 0");
+            }
             else if (arg == "--algo")
             {
                 auto algo_name = parse_arg_generic(arg, i, argc, argv);
@@ -178,6 +184,10 @@ namespace mtce
             else if (arg == "--naive-threads" && std::holds_alternative<naive_algo_flags>(args.algo))
             {
                 std::get<naive_algo_flags>(args.algo).threads = parse_arg_typed<uint16_t>(arg, i, argc, argv);
+            }
+            else if (arg == "--naive-trace" && std::holds_alternative<naive_algo_flags>(args.algo))
+            {
+                std::get<naive_algo_flags>(args.algo).enable_trace = true;
             }
             else
             {

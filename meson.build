@@ -3,23 +3,58 @@ project('mtce', 'c', 'cpp',
     version: '1.0.0'
 )
 
+# sources  
 pch = [
-    'pch/pch.h'
+    'include/pch/pch.h'
 ]
 
 common = [
-    'src/eval_naive.cpp',
+    'src/common/eval_naive.cpp',
 ]
 
 cli = [
-    'src/main.cpp',
-    'src/cli.cpp'
+    'src/cli/main.cpp',
+    'src/cli/cli.cpp'
 ]
 
 test = [
-    'src/test_naive.cpp'
+    'src/test/test_naive.cpp'
 ]
 
-mtce = executable('mtce', [common, cli], cpp_pch: [pch])
-mtce_test = executable('mtce-test', [common, test], cpp_pch: [pch])
+bot = [
+]
 
+# config 
+conf_data = configuration_data()
+conf_data.set('VERSION', meson.project_version())
+conf_data.set('MESON_CXX_COMPILER', meson.get_compiler('cpp').get_id())
+configure_file(input: 'include/build_config.h.in', output: 'build_config.h', configuration: conf_data)
+
+includes = include_directories('include')
+
+# deps   
+gtest_dep = [
+    dependency('gtest', main: true, required: false),
+    dependency('gmock', main: true, required: false)
+]
+
+# binaries 
+mtce_cli = executable('mtce', [common, cli], cpp_pch: [pch], include_directories: includes)
+mtce_test = executable('mtce-test', [common, test], cpp_pch: [pch], include_directories: includes, dependencies: gtest_dep)
+
+# testing
+test('gtest tests', mtce_test)
+
+# benchmark 
+benchmark('naive-single-thread', mtce_cli, args: [
+    '--config', meson.current_source_dir()/'samples/flame.conf', 
+    '--in', meson.current_source_dir()/'samples/sample_charm_dataset.txt',
+    '--naive-threads', '1',
+    '--benchmark', '100'
+])
+
+benchmark('naive-multi-thread', mtce_cli, args: [
+    '--config', meson.current_source_dir()/'samples/flame.conf', 
+    '--in', meson.current_source_dir()/'samples/sample_charm_dataset.txt',
+    '--benchmark', '100'
+])

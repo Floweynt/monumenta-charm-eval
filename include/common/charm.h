@@ -1,6 +1,6 @@
 #pragma once
 
-#include "charm_data.h"
+#include "gen/charm_data.h"
 #include <array>
 #include <cstddef>
 #include <cstdint>

@@ -1,9 +1,10 @@
-#include "build.h"
-#include "charm.h"
-#include "cli.h"
-#include "color.h"
-#include "eval.h"
-#include "charm_data.h"
+#include "build_config.h"
+#include "cli/cli.h"
+#include "cli/color.h"
+#include "common/charm.h"
+#include "common/eval.h"
+#include "common/gen/charm_data.h"
+#include <algorithm>
 #include <array>
 #include <cctype>
 #include <chrono>
@@ -12,9 +13,12 @@
 #include <cstdlib>
 #include <format>
 #include <iostream>
+#include <numeric>
 #include <ostream>
 #include <ratio>
 #include <string>
+#include <string_view>
+#include <utility>
 #include <variant>
 #include <vector>
 
@@ -126,56 +130,137 @@ namespace
         print_charm_stats(charm_set_stats, config);
     }
 
+    struct algo_info_printer
+    {
+        void operator()(naive_algo_flags flags)
+        {
+            std::println(std::cout, "MTCE algorithm: " yellow("naive") " with " green("{}") " worker(s)", flags.threads);
+        }
+    };
+
     struct algo_invoker
     {
         const std::vector<charm>& charms;
         const config& config;
+        bool print_algo;
+
+        // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
+        static void naive_trace_prune(std::vector<std::string_view>& abilities, std::vector<std::string_view>& charms)
+        {
+            std::println(std::cout, gray("prune - only considering abilities:"));
+            for (const auto ability : abilities)
+            {
+                std::println(std::cout, gray("  - {}"), ability);
+            }
+
+            std::println(std::cout, gray("prune - only considering charms:"));
+            for (const auto charm : charms)
+            {
+                std::println(std::cout, gray("  - {}"), charm);
+            }
+        }
 
         auto operator()(naive_algo_flags flags) -> eval_result
         {
-            std::println(std::cout, "MTCE algorithm: " yellow("naive") " with " green("{}") " worker(s)", flags.threads);
-            return evaluate_naive(charms, config.max_cp, config.to_weights(), flags.threads);
+            naive_tracing_config trace;
+
+            if (flags.enable_trace)
+            {
+                trace.trace_prune = algo_invoker::naive_trace_prune;
+            }
+
+            return evaluate_naive(
+                {
+                    .charms = charms,
+                    .max_cp = config.max_cp,
+                    .weights = config.to_weights(),
+                    .threads = flags.threads,
+                },
+                trace
+            );
         }
     };
 } // namespace
 
 auto main(int argc, const char* const* argv) -> int
 {
-    auto [config_file, in, algo] = parse_args(argc, argv);
+    auto [config_file, in, benchmark, algo] = parse_args(argc, argv);
+    auto enable_benchmark = benchmark != 0;
     auto config = read_config(std::string(config_file));
     auto charms = read_charms(std::string(in));
 
-    std::println(std::cout, "Starting MTCE " yellow(VERSION));
-    std::println(std::cout, "Config: ");
-    std::println(std::cout, "  charm_power" gray(" = ") green("{}"), config.max_cp);
-    std::println(std::cout, "Weights: ");
+    auto run_profiled = [&]() {
+        auto start = std::chrono::high_resolution_clock::now();
 
-    for (const auto& [key, value] : config.ability_weights)
+        // run the charm evaluation
+        auto result = std::visit(
+            algo_invoker{
+                .charms = charms,
+                .config = config,
+            },
+            algo
+        );
+
+        auto end = std::chrono::high_resolution_clock::now();
+        return std::make_pair(end - start, result);
+    };
+
+    if (!enable_benchmark)
     {
-        std::println(std::cout, "  {}" gray(" = ") green("{}"), key, value);
+        std::println(std::cout, "Starting MTCE " yellow(VERSION));
+        std::println(std::cout, "Config: ");
+        std::println(std::cout, "  charm_power" gray(" = ") green("{}"), config.max_cp);
+        std::println(std::cout, "Weights: ");
+
+        for (const auto& [key, value] : config.ability_weights)
+        {
+            std::println(std::cout, "  {}" gray(" = ") green("{}"), key, value);
+        }
+
+        std::println(std::cout, "Charms: ");
+
+        for (const auto& charm : charms)
+        {
+            std::println(std::cout, "  {} (" green("{}") ")", colorize(charm.color, charm.name), charm.charm_power);
+        }
+
+        std::visit(algo_info_printer{}, algo);
+
+        auto [time, result] = run_profiled();
+        std::println(std::cout, "Charm eval took " green("{:.4f}") " milliseconds", std::chrono::duration<double, std::milli>(time).count());
+        print_results(result, charms, config);
     }
-
-    std::println(std::cout, "Charms: ");
-
-    for (const auto& charm : charms)
+    else
     {
-        std::println(std::cout, "  {} (" green("{}") ")", colorize(charm.color, charm.name), charm.charm_power);
+        // run the charm evaluation
+        auto result = std::visit(
+            algo_invoker{
+                .charms = charms,
+                .config = config,
+            },
+            algo
+        );
+
+        std::vector<double> times;
+
+        times.reserve(benchmark);
+
+        for (size_t i = 0; i < benchmark; i++)
+        {
+            auto [time, ignored] = run_profiled();
+            auto ns_count = std::chrono::duration<double, std::nano>(time).count();
+            times.push_back(ns_count);
+            std::println(std::cout, "run " green("{}") " took " green("{:.4f}") " ns", i, ns_count);
+        }
+
+        double sum = std::accumulate(times.begin(), times.end(), 0.0);
+        double mean = sum / times.size();
+
+        std::vector<double> diff(times.size());
+        std::ranges::transform(times, diff.begin(), [mean](double x) { return x - mean; });
+        double sq_sum = std::inner_product(diff.begin(), diff.end(), diff.begin(), 0.0);
+        double stddev = std::sqrt(sq_sum / times.size());
+
+        std::println(std::cout, "mean = " green("{:.4f}") " stddev = " green("{:.4f}"), mean, stddev);
     }
-
-    auto start = std::chrono::high_resolution_clock::now();
-
-    // run the charm evaluation
-    auto result = std::visit(
-        algo_invoker{
-            .charms = charms,
-            .config = config,
-        },
-        algo
-    );
-
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double, std::milli> time = end - start;
-    std::println(std::cout, "Charm eval took " green("{:.4f}") " milliseconds", time.count());
-
-    print_results(result, charms, config);
 }

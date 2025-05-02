@@ -1,7 +1,7 @@
 #pragma once
 
-#include "charm.h"
-#include "eval.h"
+#include "common/charm.h"
+#include "common/eval.h"
 #include <cstddef>
 #include <cstdint>
 #include <string>
@@ -15,6 +15,7 @@ namespace mtce
     struct naive_algo_flags
     {
         size_t threads;
+        bool enable_trace;
     };
 
     using algo_info_t = std::variant<naive_algo_flags>;
@@ -23,6 +24,7 @@ namespace mtce
     {
         std::string_view config;
         std::string_view charm_input_file;
+        uint32_t benchmark = 0;
         algo_info_t algo;
     };
 

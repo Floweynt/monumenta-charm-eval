@@ -4,6 +4,8 @@ import {readFileSync} from "fs";
 export interface BotConfig {
     token: string;
     id: string;
+    threads: number;
+    timeout: number;
 }
 
 let config: BotConfig | undefined;

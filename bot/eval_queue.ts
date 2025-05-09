@@ -3,6 +3,7 @@ import {BlockingQueue} from "./blocking_queue";
 import {spawn} from "node:child_process";
 import {file as createTmpFile} from "tmp-promise";
 import {logger} from "./log";
+import {getConfig} from "./config";
 
 export type EvalResult = {
     success: true;
@@ -40,14 +41,14 @@ async function doTask(task: CharmEvalTask, filePath: string): Promise<EvalResult
 
     const spawnResult = await new Promise<SpawnResult>((resolve) => {
         const args = [
-            "--bot-mode", "--in", filePath, "--config-charm-power", task.cp.toString(),
+            "--bot-mode", "--in", filePath, "--naive-threads", getConfig().threads.toString(), "--config-charm-power", task.cp.toString(),
             ...Object.entries(task.weights).flatMap(([k, v]) => [`--weight-${k}`, v.toString()])
         ];
 
         logger.audit("eval_queue.spawn", {args, });
 
         const proc = spawn("./mtce", args, {
-            timeout: 30 * 1000, // TODO: config? 
+            timeout: getConfig().timeout * 1000,
         });
 
         let stdout = Buffer.of();

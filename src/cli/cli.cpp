@@ -131,6 +131,8 @@ namespace mtce
 
     auto parse_args(int argc, const char* const* argv) -> cli_options
     {
+        static constexpr std::string_view CLI_WEIGHT_PREFIX = "--weight-";
+
         cli_options args;
         args.algo = naive_algo_flags{
             .threads = std::thread::hardware_concurrency(),
@@ -157,7 +159,20 @@ namespace mtce
             }
             else if (arg == "--config" || arg == "-c")
             {
-                args.config = parse_arg_generic(arg, i, argc, argv);
+                auto config_file = parse_arg_generic(arg, i, argc, argv);
+                read_config(std::string(config_file), args.config);
+            }
+            else if (arg == "--config-charm-power")
+            {
+                auto value = parse_arg_typed<uint8_t>(arg, i, argc, argv);
+                check(value <= CHARM_POWER_MAX, "cp must be less than or equal to {}", CHARM_POWER_MAX);
+                args.config.max_cp = value;
+            }
+            else if (arg.starts_with(CLI_WEIGHT_PREFIX))
+            {
+                auto name = std::string(arg.substr(CLI_WEIGHT_PREFIX.size()));
+                check(NAME_TO_ID.contains(name), "unknown effect type");
+                args.config.ability_weights[name] = parse_arg_typed<int32_t>(arg, i, argc, argv);
             }
             else if (arg == "--in" || arg == "-i")
             {
@@ -166,6 +181,10 @@ namespace mtce
             else if (arg == "--benchmark")
             {
                 check((args.benchmark = parse_arg_typed<uint32_t>(arg, i, argc, argv)) > 0, "--benchmark must be followed by number > 0");
+            }
+            else if (arg == "--bot-mode")
+            {
+                args.bot_mode = true;
             }
             else if (arg == "--algo")
             {
@@ -195,12 +214,11 @@ namespace mtce
             }
         }
 
-        check(!args.config.empty(), "missing --config (config), try --help?");
         check(!args.charm_input_file.empty(), "missing --in (charm input file), try --help?");
         return args;
     }
 
-    auto read_config(const std::string& path) -> config
+    void read_config(const std::string& path, config& out)
     {
         std::ifstream ifs(path);
 
@@ -209,10 +227,6 @@ namespace mtce
             GLOBAL,
             WEIGHTS
         } section = GLOBAL;
-
-        config cfg{
-            .max_cp = 0,
-        };
 
         std::string raw_line;
 
@@ -254,7 +268,8 @@ namespace mtce
                 case GLOBAL: {
                     if (key == "charm_power")
                     {
-                        cfg.max_cp = read_cfg_int(line_no, value);
+                        out.max_cp = read_cfg_int(line_no, value);
+                        check(out.max_cp <= CHARM_POWER_MAX, "cp must be less than or equal to {}", CHARM_POWER_MAX);
                     }
                     else
                     {
@@ -265,14 +280,12 @@ namespace mtce
                 case WEIGHTS: {
                     auto iter = mtce::NAME_TO_ID.find(key);
                     check(iter != mtce::NAME_TO_ID.end(), "unknown charm effect on line {}: '{}'", line_no, key);
-                    cfg.ability_weights[std::string(key)] = read_cfg_int(line_no, value);
+                    out.ability_weights[std::string(key)] = read_cfg_int(line_no, value);
                 }
                 break;
                 }
             }
         }
-
-        return cfg;
     }
 
     // NOLINTBEGIN(cppcoreguidelines-avoid-magic-numbers)

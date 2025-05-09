@@ -184,9 +184,8 @@ namespace
 
 auto main(int argc, const char* const* argv) -> int
 {
-    auto [config_file, in, benchmark, algo] = parse_args(argc, argv);
+    auto [config, in, benchmark, algo, bot_mode] = parse_args(argc, argv);
     auto enable_benchmark = benchmark != 0;
-    auto config = read_config(std::string(config_file));
     auto charms = read_charms(std::string(in));
 
     auto run_profiled = [&]() {
@@ -205,7 +204,17 @@ auto main(int argc, const char* const* argv) -> int
         return std::make_pair(end - start, result);
     };
 
-    if (!enable_benchmark)
+    if (bot_mode)
+    {
+        auto [time, result] = run_profiled();
+        std::println(std::cout, "{}", result.utility_value);
+
+        for (auto charm_id : result.charms)
+        {
+            std::println(std::cout, "{}", charm_id);
+        }
+    }
+    else if (!enable_benchmark)
     {
         std::println(std::cout, "Starting MTCE " yellow(VERSION));
         std::println(std::cout, "Config: ");
@@ -227,6 +236,7 @@ auto main(int argc, const char* const* argv) -> int
         std::visit(algo_info_printer{}, algo);
 
         auto [time, result] = run_profiled();
+
         std::println(std::cout, "Charm eval took " green("{:.4f}") " milliseconds", std::chrono::duration<double, std::milli>(time).count());
         print_results(result, charms, config);
     }

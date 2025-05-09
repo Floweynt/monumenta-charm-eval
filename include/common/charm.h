@@ -11,6 +11,7 @@
 namespace mtce
 {
     inline static constexpr std::size_t CHARM_COUNT_MAX = 7;
+    inline static constexpr std::size_t CHARM_POWER_MAX = 15;
 
     using charm_id = std::uint32_t;
     inline static constexpr charm_id MISSING_ID = -1U;

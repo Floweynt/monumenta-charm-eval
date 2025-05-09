@@ -1,5 +1,6 @@
 #pragma once
 
+#include "build_config.h"
 #include "common/charm.h"
 #include <algorithm>
 #include <array>
@@ -16,7 +17,7 @@ namespace mtce::vec
     // alignment for vectorization reasons
     inline static constexpr std::size_t ENCODED_CHARM_STAT_BITS = 26;
     inline static constexpr int32_t ENCODED_CHARM_STAT_SCALE = (1 << ENCODED_CHARM_STAT_BITS) - 1;
-    inline static constexpr std::size_t DEFAULT_VECTOR_BLOCK = 512 / 8;
+    inline static constexpr std::size_t DEFAULT_VECTOR_BLOCK = VECTORIZED_BIT_SIZE / 8;
 
 #ifdef IS_LANGUAGE_SERVER
     // tunables

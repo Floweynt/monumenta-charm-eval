@@ -20,17 +20,9 @@ namespace mtce
 
     using algo_info_t = std::variant<naive_algo_flags>;
 
-    struct cli_options
-    {
-        std::string_view config;
-        std::string_view charm_input_file;
-        uint32_t benchmark = 0;
-        algo_info_t algo;
-    };
-
     struct config
     {
-        std::uint8_t max_cp;
+        std::uint8_t max_cp = CHARM_POWER_MAX;
         std::unordered_map<std::string, std::int32_t> ability_weights;
 
         [[nodiscard]] constexpr auto to_weights() const -> charm_weights
@@ -49,7 +41,16 @@ namespace mtce
         }
     };
 
+    struct cli_options
+    {
+        config config;
+        std::string_view charm_input_file;
+        uint32_t benchmark = 0;
+        algo_info_t algo;
+        bool bot_mode = false;
+    };
+
     auto parse_args(int argc, const char* const* argv) -> cli_options;
-    auto read_config(const std::string& path) -> config;
+    void read_config(const std::string& path, config& out);
     auto read_charms(const std::string& path) -> std::vector<charm>;
 } // namespace mtce

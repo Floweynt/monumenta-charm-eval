@@ -1,0 +1,3 @@
+option('vectorized_bit_size', type: 'integer', min: 1, value: 256)
+option('enable_tests', type : 'boolean', value: false)
+option('benchmark_runs', type : 'integer', min: 1, value: 100)

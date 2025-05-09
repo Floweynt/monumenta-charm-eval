@@ -11,3 +11,5 @@ AllowShortFunctionsOnASingleLine: All
 UseTab: Never
 AlignAfterOpenBracket: BlockIndent 
 AllowAllArgumentsOnNextLine: true
+AlignOperands: DontAlign 
+ContinuationIndentWidth: 4

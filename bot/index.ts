@@ -4,12 +4,18 @@ import {COMMANDS, isSubCommandNode, sendReply} from "./command";
 import {UserData} from "./data";
 import {getConfig} from "./config";
 import {logger} from "./log";
+import {mkdir} from "fs/promises";
+import {Readable} from "stream";
+import {createWriteStream} from "fs";
+import assert from "assert";
+import {ReadableStream} from "stream/web";
 
 const queue = new EvalJobRunner();
 const userData = new UserData();
 const config = getConfig();
-const client = new Client({intents: [],});
+const client = new Client({intents: [], });
 
+await mkdir("audit", {recursive: true, });
 await userData.read("data.json");
 
 // start background tasks
@@ -29,13 +35,25 @@ client.on(Events.InteractionCreate, async (interaction) => {
         command: interaction.commandName,
         subcommand: interaction.options.getSubcommand(false) ?? undefined,
         options: Object.fromEntries(interaction.options["_hoistedOptions"].map((opt, i) => {
-            if (opt.type == ApplicationCommandOptionType.Subcommand) {
+            if (opt.type === ApplicationCommandOptionType.Subcommand) {
                 return [i.toString(), opt.name];
-            } else if (opt.type == ApplicationCommandOptionType.String) {
+            } else if (opt.type === ApplicationCommandOptionType.String) {
                 return [opt.name, opt.value];
-            } else if (opt.type == ApplicationCommandOptionType.Attachment) {
+            } else if (opt.type === ApplicationCommandOptionType.Attachment) {
+                // dispatch this async - we don't care about result 
+                (async () => {
+                    try {
+                        const res = await fetch(opt.attachment.url);
+                        const fileStream = createWriteStream(`audit/${interaction.id}-${opt.name}`, {flags: "w+", });
+                        assert(res.body !== null);
+                        Readable.fromWeb(res.body as ReadableStream<any>).pipe(fileStream);
+                    } catch (e) {
+                        logger.error("while logging attachment", e);
+                    }
+                })();
+
                 return [opt.name, opt.attachment?.url];
-            } else if (opt.type == ApplicationCommandOptionType.User) {
+            } else if (opt.type === ApplicationCommandOptionType.User) {
                 return [opt.name, opt.user?.id];
             }
 
@@ -48,7 +66,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         const commandNode = COMMANDS[commandName];
 
         if (!commandNode) {
-            await interaction.reply({content: "Unknown command", ephemeral: true,});
+            await interaction.reply({content: "Unknown command", ephemeral: true, });
             return;
         }
 

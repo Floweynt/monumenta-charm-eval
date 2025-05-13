@@ -90,7 +90,7 @@ async function validateAndNormalizeConfig(interaction: ChatInputCommandInteracti
 
 async function validateAscii(interaction: ChatInputCommandInteraction, str: string) {
     if (!/^[\x32-\x7e]*$/m.test(str)) {
-        logger.audit("command.generic.error.err_not_ascii", {interaction: interaction.id,});
+        logger.audit("command.generic.error.err_not_ascii", {interaction: interaction.id, });
         await sendReply(interaction, "Invalid input file.");
         return false;
     }
@@ -116,7 +116,7 @@ async function tryFetchConfig(interaction: ChatInputCommandInteraction, userData
     const id = typeof owner === "string" ? owner : owner.id;
     const config = userData.fetchConfig(id, name);
 
-    if (config == undefined) {
+    if (config === undefined) {
         await sendReply(interaction, `Config <@${id}>:${name} not found.`);
     }
 
@@ -124,7 +124,7 @@ async function tryFetchConfig(interaction: ChatInputCommandInteraction, userData
 }
 
 async function doEvaluateCharms(interaction: ChatInputCommandInteraction, userData: UserData, queue: EvalJobRunner, task: UserEvalJob) {
-    const {owner, name, charmDataUrl: url, cp,} = task;
+    const {owner, name, charmDataUrl: url, cp, } = task;
 
     const config = await tryFetchConfig(interaction, userData, owner, name);
 
@@ -193,7 +193,7 @@ async function doEvaluateCharms(interaction: ChatInputCommandInteraction, userDa
             return true;
         }
 
-        if (parts.length == 6) {
+        if (parts.length === 6) {
             if (findEffectValueErrors(parts[5])) {
                 return true;
             }
@@ -281,7 +281,7 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
             const cp = interaction.options.getInteger("cp") ?? 15;
             const owner = interaction.options.getUser("owner") ?? interaction.user;
 
-            const job: UserEvalJob = {cp, name, owner: owner.id, charmDataUrl,};
+            const job: UserEvalJob = {cp, name, owner: owner.id, charmDataUrl, };
 
             userData.setLatestJob(interaction.user.id, job);
             await doEvaluateCharms(interaction, userData, queue, job);
@@ -293,7 +293,7 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
         async executor(interaction, userData, queue) {
             const lastJob = userData.getLatestJob(interaction.user.id);
 
-            if (lastJob == undefined) {
+            if (lastJob === undefined) {
                 await sendReply(interaction, "No past job for user.");
                 return;
             }
@@ -318,11 +318,71 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
             const currTask = queue.getCurrTask();
             await sendReply(
                 interaction,
-                (currTask == undefined ?
+                (currTask === undefined ?
                     "No current task" :
                     `Current task: ${formatTask(currTask)}`) + "\n" +
                 queue.getEntries().map((task, index) => `#${index + 1}: ${formatTask(task)}`).join("\n")
             );
+        },
+    },
+    help: {
+        description: "Documentation.",
+        options: {},
+        async executor(interaction) {
+            await sendReply(interaction, `
+            ## Charm Eval Bot Help Manual
+
+            **Commands:**
+
+            **/findeffect** - Query charm effects by name.  
+            Usage: \`/findeffect query:<text>\`  
+            - \`query\`: Space-separated terms to search in effect names.
+            You can use this to get effect names for making the config; see \`/config create\`
+
+            **/evaluate** - Evaluate charms using a config.  
+            Usage: \`/evaluate name:<config> data:<file> [cp:<1-15>] [owner:<user>]\`  
+            - \`name\`: Config name.  
+            - \`data\`: Charm data file.  
+            - \`cp\`: Charm power (1-15, default 15).  
+            - \`owner\`: Config owner (defaults to you).
+            The config should be created by \`/config create\`. The charm data file should be obtained via flowey mod (version 1.8 or above).
+            With the mod, you can hover over charms and press \`i\`. After you add all charms, run \`/fma copycharmdata\`, and paste the result into a file.
+            Then you should upload that file as the attachment for \`data\`.
+
+            **/rerun** - Re-run your last evaluation.  
+            Usage: \`/rerun\`
+
+            **/queue** - View current evaluation queue.  
+            Usage: \`/queue\`
+            `.split("\n").map(x => x.trim()).join("\n"));
+
+            await sendReply(interaction, ` 
+            **/config** - Manage configurations.  
+            Subcommands:  
+            - **get**: View a config.  
+              Usage: \`/config get name:<name> [owner:<user>]\`  
+            - **delete**: Delete a config.  
+              Usage: \`/config delete name:<name> [owner:<user>]\`  
+              *Requires permission if modifying another user's config.*  
+            - **fork**: Copy a config.  
+              Usage: \`/config fork target_name:<name> source_name:<name> [target_owner:<user>] [source_owner:<user>]\`  
+            - **create**: Create a new config.  
+              Usage: \`/config create name:<name> [owner:<user>] [data:<file>]\`  
+              *File format: Each line \`effect=weight\`, comments with #*, names can be obtained via \`/findeffect\`.  
+            - **list**: List user's configs.  
+              Usage: \`/config list [owner:<user>]\`  
+            - **edit**: Modify a config's weight.  
+              Usage: \`/config edit name:<name> effect:<effect> weight:<value> [owner:<user>]\`  
+              - \`weight\`: Integer between -2000000000 and 2000000000.
+
+            ## Example Usage 
+            First you should create a config via \`/config create\`. For example, if you wanted to create a config for flame charms, you should:
+            1. Look up the name of the effect via \`/findeffect\`, so for example you may run \`/findeffect query:meteor cooldown\`
+            2. Create the config with \`/config create\`
+            3. Use \`/config edit\` with the effect name from step 1 and give it a weight; this assigns the relative importance of an effect.
+            4. Obtain charm data via flowey mod.
+            5. Use \`/evaluate\`
+            `.split("\n").map(x => x.trim()).join("\n"));
         },
     },
     config: {
@@ -351,7 +411,7 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
 
                     const config = await tryFetchConfig(interaction, userData, owner, name);
 
-                    if (config == undefined) {
+                    if (config === undefined) {
                         return;
                     }
 
@@ -394,7 +454,7 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
                         return;
                     }
 
-                    if (interaction.user.id != owner.id && !userData.isAdmin(interaction.user.id)) {
+                    if (interaction.user.id !== owner.id && !userData.isAdmin(interaction.user.id)) {
                         await sendReply(interaction, "You do not have permission to delete this config!");
                         return;
                     }
@@ -448,7 +508,7 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
                         return;
                     }
 
-                    if (interaction.user.id != targetOwner.id && !userData.isAdmin(interaction.user.id)) {
+                    if (interaction.user.id !== targetOwner.id && !userData.isAdmin(interaction.user.id)) {
                         await sendReply(interaction, "You do not have permission to fork a config to this user!");
                         return;
                     }
@@ -488,7 +548,7 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
                         return;
                     }
 
-                    let config: UserWeightConfig = {weights: {},};
+                    let config: UserWeightConfig = {weights: {}, };
 
                     if (attachmentUrl !== undefined) {
                         const request = await fetch(attachmentUrl);
@@ -502,24 +562,24 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
                             const data = initialConfig.split("\n")
                                 .map(line => {
                                     const idx = line.indexOf("#");
-                                    return idx == -1 ? line : line.substring(0, idx);
+                                    return idx === -1 ? line : line.substring(0, idx);
                                 })
                                 .map(line => line.trim())
-                                .filter(line => line.length != 0)
+                                .filter(line => line.length !== 0)
                                 .map(x => x.split("=", 2))
                                 .map(([k, v]) => {
                                     assert(validateWeight(v));
                                     return [k.trim(), v.trim()];
                                 });
 
-                            config = await validateAndNormalizeConfig(interaction, {weights: Object.fromEntries(data),});
+                            config = await validateAndNormalizeConfig(interaction, {weights: Object.fromEntries(data), });
                         } catch {
                             await sendReply(interaction, "Invalid input file.");
                             return;
                         }
                     }
 
-                    if (interaction.user.id != owner.id && !userData.isAdmin(interaction.user.id)) {
+                    if (interaction.user.id !== owner.id && !userData.isAdmin(interaction.user.id)) {
                         await sendReply(interaction, "You do not have permission to create a config to this user!");
                         return;
                     }
@@ -595,7 +655,7 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
                         return;
                     }
 
-                    if (interaction.user.id != owner.id && !userData.isAdmin(interaction.user.id)) {
+                    if (interaction.user.id !== owner.id && !userData.isAdmin(interaction.user.id)) {
                         await sendReply(interaction, "You do not have permission to create a config to this user!");
                         return;
                     }

@@ -37,7 +37,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         options: Object.fromEntries(interaction.options["_hoistedOptions"].map((opt, i) => {
             if (opt.type === ApplicationCommandOptionType.Subcommand) {
                 return [i.toString(), opt.name];
-            } else if (opt.type === ApplicationCommandOptionType.String) {
+            } else if (opt.type === ApplicationCommandOptionType.String || opt.type === ApplicationCommandOptionType.Integer) {
                 return [opt.name, opt.value];
             } else if (opt.type === ApplicationCommandOptionType.Attachment) {
                 // dispatch this async - we don't care about result 

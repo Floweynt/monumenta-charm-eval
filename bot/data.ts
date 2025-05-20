@@ -135,7 +135,7 @@ export class UserData {
         return res;
     }
 
-    public createConfig0(user: string, name: string, config: UserWeightConfig): boolean {
+    public createConfig0(user: string, name: string, config: UserWeightConfig, override?: true): boolean {
         let userMap = this.userConfigs.get(user);
 
         if (userMap === undefined) {
@@ -143,7 +143,7 @@ export class UserData {
             this.userConfigs.set(user, userMap);
         }
 
-        if (userMap.has(name)) {
+        if (userMap.has(name) && !override) {
             return false;
         }
 
@@ -151,10 +151,10 @@ export class UserData {
         return true;
     }
 
-    public createConfig(user: string, name: string, config: UserWeightConfig): boolean {
+    public createConfig(user: string, name: string, config: UserWeightConfig, override?: true): boolean {
         this.dirty = true;
 
-        const res = this.createConfig0(user, name, config);
+        const res = this.createConfig0(user, name, config, override);
 
         if (res) {
             logger.audit("data.createConfig", {user, name,});

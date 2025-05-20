@@ -570,11 +570,7 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
                         return;
                     }
 
-                    if (!userData.createConfig(owner.id, name, await validateAndNormalizeConfig(interaction, config))) {
-                        await sendReply(interaction, `Config ${owner}:${name} already exists.`);
-                        return;
-                    }
-
+                    userData.createConfig(owner.id, name, await validateAndNormalizeConfig(interaction, config), true);
                     await sendReply(interaction, `Created config ${owner}:${name}.`);
                 },
             },

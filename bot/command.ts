@@ -3,7 +3,6 @@ import {ChatInputCommandInteraction, User} from "discord.js";
 import {UserData, UserEvalJob, UserWeightConfig} from "./data";
 import zenithCharmJson from "../misc/zenith_charm_config.json";
 import {CharmEvalTask, EvalJobRunner} from "./eval_queue";
-import {logger} from "./log";
 
 export type CommandOption = {
     type: string;
@@ -88,16 +87,6 @@ async function validateAndNormalizeConfig(interaction: ChatInputCommandInteracti
     };
 }
 
-async function validateAscii(interaction: ChatInputCommandInteraction, str: string) {
-    if (!/^[\x32-\x7e]*$/m.test(str)) {
-        logger.audit("command.generic.error.err_not_ascii", {interaction: interaction.id, });
-        await sendReply(interaction, "Invalid input file.");
-        return false;
-    }
-
-    return true;
-}
-
 function validateWeight(weight: string) {
     try {
         const value = BigInt(weight);
@@ -121,6 +110,10 @@ async function tryFetchConfig(interaction: ChatInputCommandInteraction, userData
     }
 
     return config;
+}
+
+function splitByNewline(value: string): string[] {
+    return value.split(/\r\n|\r|\n/);
 }
 
 async function doEvaluateCharms(interaction: ChatInputCommandInteraction, userData: UserData, queue: EvalJobRunner, task: UserEvalJob) {
@@ -149,12 +142,7 @@ async function doEvaluateCharms(interaction: ChatInputCommandInteraction, userDa
 
     const charmText = await fetchResult.text();
 
-    // validate charmText 
-    if (!await validateAscii(interaction, charmText)) {
-        return;
-    }
-
-    const charmLines = charmText.split("\n")
+    const charmLines = splitByNewline(charmText) 
         .map((str, idx) => [str.trim(), idx + 1] as [string, number])
         .filter(([str]) => str.length !== 0);
 
@@ -554,12 +542,8 @@ export const COMMANDS: Record<string, SubCommandNode | ExecuteNode> = {
                         const request = await fetch(attachmentUrl);
                         const initialConfig = await request.text();
 
-                        if (!await validateAscii(interaction, initialConfig)) {
-                            return;
-                        }
-
                         try {
-                            const data = initialConfig.split("\n")
+                            const data = splitByNewline(initialConfig)
                                 .map(line => {
                                     const idx = line.indexOf("#");
                                     return idx === -1 ? line : line.substring(0, idx);

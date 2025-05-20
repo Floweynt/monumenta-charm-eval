@@ -142,7 +142,7 @@ async function doEvaluateCharms(interaction: ChatInputCommandInteraction, userDa
 
     const charmText = await fetchResult.text();
 
-    const charmLines = splitByNewline(charmText) 
+    const charmLines = splitByNewline(charmText)
         .map((str, idx) => [str.trim(), idx + 1] as [string, number])
         .filter(([str]) => str.length !== 0);
 
@@ -213,7 +213,9 @@ async function doEvaluateCharms(interaction: ChatInputCommandInteraction, userDa
         `Weight: ${result.weight}\n` +
         "```\n" +
         result.charms.map(x => names[x]).join("\n") + "\n" +
-        "```"
+        "```\n" +
+        "Stats:\n" +
+        "```\n" + result.stats.trim() + "\n```"
     );
 }
 

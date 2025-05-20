@@ -14,8 +14,9 @@
 #include <format>
 #include <iostream>
 #include <numeric>
-#include <ostream>
+#include <print>
 #include <ratio>
+#include <source_location>
 #include <string>
 #include <string_view>
 #include <utility>
@@ -42,9 +43,19 @@ namespace
         return std::format(Plus ? "{:+.2f}{}" : "{:.2f}{}", std::round(value * 100) / 100.0, EFFECT_IS_PERCENT.at(ability) ? "%" : "");
     }
 
-    void print_charm_stats(const std::array<double, ABILITY_COUNT>& stats, const config& cfg)
+    void print_charm_stats(const eval_result& result, const std::vector<charm>& charms, const config& cfg)
     {
-        std::println(std::cout, "Set stats: ");
+        std::array<double, ABILITY_COUNT> stats{};
+
+        for (const auto charm_index : result.charms)
+        {
+            const auto& charm = charms[charm_index];
+            for (size_t ability = 0; ability < ABILITY_COUNT; ability++)
+            {
+                stats.at(ability) += charm.charm_data.at(ability);
+            }
+        }
+        
         for (size_t ability = 0; ability < ABILITY_COUNT; ability++)
         {
             auto display_name = EFFECT_DISPLAY_NAMES.at(ability);
@@ -111,23 +122,16 @@ namespace
         std::println(std::cout, "Optimal charm set (" green("{}") "): ", result.utility_value);
         std::uint32_t curr_cp = 0;
 
-        std::array<double, ABILITY_COUNT> charm_set_stats{};
-
         for (const auto charm_index : result.charms)
         {
             const auto& charm = charms[charm_index];
             std::println(std::cout, "  {} (" green("{}") ")", colorize(charm.color, charm.name), charm.charm_power);
             curr_cp += charm.charm_power;
-
-            for (size_t ability = 0; ability < ABILITY_COUNT; ability++)
-            {
-                charm_set_stats.at(ability) += charm.charm_data.at(ability);
-            }
         }
 
         std::println(std::cout, "Charm power used: " green("{}") "/" green("{}"), curr_cp, config.max_cp);
-
-        print_charm_stats(charm_set_stats, config);
+        std::println(std::cout, "Set stats: ");
+        print_charm_stats(result, charms, config);
     }
 
     struct algo_info_printer
@@ -213,6 +217,11 @@ auto main(int argc, const char* const* argv) -> int
         {
             std::println(std::cout, "{}", charm_id);
         }
+
+        std::println();
+
+        // TODO: add an option to not print ansi escape - currently, we have to strip this in js 
+        print_charm_stats(result, charms, config);
     }
     else if (!enable_benchmark)
     {
@@ -269,7 +278,7 @@ auto main(int argc, const char* const* argv) -> int
         std::vector<double> diff(times.size());
         std::ranges::transform(times, diff.begin(), [mean](double x) { return x - mean; });
         double sq_sum = std::inner_product(diff.begin(), diff.end(), diff.begin(), 0.0);
-        double stddev = std::sqrt(sq_sum / times.size());
+        double stddev = std::sqrt(sq_sum / times.size()) / times.size();
 
         std::println(std::cout, "mean = " green("{:.4f}") " stddev = " green("{:.4f}"), mean, stddev);
     }

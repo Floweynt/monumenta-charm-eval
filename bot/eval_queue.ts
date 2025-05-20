@@ -4,11 +4,13 @@ import {spawn} from "node:child_process";
 import {file as createTmpFile} from "tmp-promise";
 import {logger} from "./log";
 import {getConfig} from "./config";
+import {stripVTControlCharacters} from "node:util";
 
 export type EvalResult = {
     success: true;
     weight: bigint;
     charms: number[];
+    stats: string;
 } | {
     success: false;
     error: string;
@@ -99,7 +101,16 @@ async function doTask(task: CharmEvalTask, filePath: string): Promise<EvalResult
         }
     }
 
-    const rawLines = spawnResult.stdout.toString("utf8").trim().split("\n");
+    const parts = spawnResult.stdout.toString("utf8").trim().split("\n\n");
+
+    if (parts.length != 2) {
+        return {
+            success: false,
+            error: "Internal error: illegal output from charm evaluator",
+        };
+    }
+
+    const rawLines = parts[0].split("\n");
 
     if (rawLines.length < 1) {
         return {
@@ -109,6 +120,7 @@ async function doTask(task: CharmEvalTask, filePath: string): Promise<EvalResult
     }
 
     try {
+
         const result = {
             weight: BigInt(rawLines[0]),
             charms: rawLines.slice(1).map(x => parseInt(x)),
@@ -116,7 +128,11 @@ async function doTask(task: CharmEvalTask, filePath: string): Promise<EvalResult
 
         logger.audit("eval_queue.done", {...result, ...auditLogCommon, });
 
-        return {success: true, ...result, };
+        return {
+            success: true,
+            stats: stripVTControlCharacters(parts[1]),
+            ...result, 
+        };
     } catch {
         return {
             success: false,

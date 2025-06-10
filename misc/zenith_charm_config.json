@@ -3825,24 +3825,24 @@
         ]
     },
     {
-        "effectName": "Phantom Force Weaken Amplifier",
+        "effectName": "Phantom Force Vulnerability Amplifier",
         "ability": "Phantom Force",
         "isOnlyPositive": false,
         "isPercent": true,
-        "variance": 5.0,
-        "effectCap": 40.0,
+        "variance": 2.0,
+        "effectCap": 15.0,
         "tree": "Shadowdancer",
         "maxRarity": 5,
         "rarityValues": [
+            4.0,
             5.0,
-            7.5,
-            10.0,
-            12.5,
-            15.0
+            6.0,
+            7.0,
+            8.0
         ]
     },
     {
-        "effectName": "Phantom Force Weaken Duration",
+        "effectName": "Phantom Force Vulnerability Duration",
         "ability": "Phantom Force",
         "isOnlyPositive": true,
         "isPercent": false,

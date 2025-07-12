@@ -1,4 +1,5 @@
 import json 
+from urllib.request import urlopen
 
 def gen(j: list[dict]):
     ids = []
@@ -45,5 +46,5 @@ def gen(j: list[dict]):
 
 
 if __name__ == "__main__":
-    with open("zenith_charm_config.json") as f:
+    with urlopen("http://api.playmonumenta.com/zenith_charm_effects") as f:    
         gen(json.load(f))

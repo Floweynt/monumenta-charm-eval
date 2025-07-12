@@ -1,46 +1,48 @@
 #pragma once
 
 #include <algorithm>
-#include <cctype>
 #include <cstddef>
-#include <iterator>
 #include <ranges>
 #include <string_view>
 #include <vector>
 
 namespace mtce
 {
-    constexpr auto trim(std::string_view str) -> std::string_view
-    {
-        auto is_space = +[](char ch) { return std::isspace(static_cast<unsigned char>(ch)); };
-        const auto* begin = std::ranges::find_if_not(str, is_space);
-        const auto* end = std::ranges::find_if_not(std::ranges::reverse_view(str), is_space).base();
+    constexpr auto is_space(char ch) -> bool { return ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r'; }
 
-        if (begin >= end)
+    inline auto trim(std::string_view str) -> std::string_view
+    {
+        // Find first non-space
+        const auto* begin_it = std::ranges::find_if_not(str, is_space);
+        // Find last non-space (reverse view)
+        const auto* end_it = std::ranges::find_if_not(std::ranges::reverse_view(str), is_space).base();
+
+        // Convert iterators to pointers for string_view ctor
+        const char* begin = begin_it == str.end() ? str.data() + str.size() : &*begin_it;
+        const char* end = end_it == str.end() ? str.data() + str.size() : &*end_it;
+
+        if (begin > end)
         {
             return {};
         }
 
-        return {begin, static_cast<size_t>(std::distance(begin, end))};
+        return {begin, static_cast<size_t>(end - begin)};
     }
 
-    constexpr auto split_string_view(std::string_view str, char delimiter) -> std::vector<std::string_view>
+    inline auto split_string_view(std::string_view str, char delim) -> std::vector<std::string_view>
     {
         std::vector<std::string_view> result;
         size_t start = 0;
-
-        while (start < str.size())
+        while (start <= str.size())
         {
-            size_t end = str.find(delimiter, start);
+            size_t end = str.find(delim, start);
             if (end == std::string_view::npos)
             {
-                result.emplace_back(str.substr(start));
-                break;
+                end = str.size();
             }
-            result.emplace_back(str.substr(start, end - start));
+            result.emplace_back(str.data() + start, end - start);
             start = end + 1;
         }
-
         return result;
     }
 } // namespace mtce

@@ -26,10 +26,37 @@ $ ninja -j4
 
 #### Windows
 
-*TODO (no Windows setup currently available)*
+##### Prepare Dependencies
 
-The steps are likely similar to Linux. You can install Clang for Windows, and both Ninja and Meson are cross-platform. Alternatively, use WSL. 
-If you successfully build this on Windows, please consider contributing a guide.
+- Clang: install the latest `LLVM-(VersionNumberHere)-win64.exe` from [LLVM Releases](https://github.com/llvm/llvm-project/releases)
+- Meson & Ninja
+    - Install [Python](https://www.python.org/downloads/) first
+	- Type `pip install meson` and `pip install ninja` in cmd (Win+R, type `cmd` and enter)
+- C++ Library
+	- Download [VS Build Tool](https://visualstudio.microsoft.com/visual-cpp-build-tools/). During installation, select the "Desktop development with C++" workload.
+
+##### Build
+
+Install [Git](https://git-scm.com/download/win) first. During installation, choose the option to “Add Git to PATH” (usually it is by default).
+
+Open PowerShell (Win+X) and type
+```PowerShell
+git clone https://github.com/Floweynt/monumenta-charm-eval.git
+cd monumenta-charm-eval
+```
+
+Wait till it's done, then type 
+```PowerShell
+$env:CC="clang"
+$env:CXX="clang++"
+meson setup build --buildtype=release -Dcpp_args="-O3 -march=native"
+```
+
+Wait till it's done, then type 
+```PowerShell
+cd build
+ninja -j4
+```
 
 ### Configuration
 
@@ -51,14 +78,20 @@ minimizing the number of effects.
 
 ### Running
 
+1. Write up the config (example file at `monumenta-charm-eval/samples`) and save it as a file at `monumenta-charm-eval/build`.
+2. Grab charm data with Flowey's Monumenta Addons mod (v1.8+), press the keybind (I by default) when hovering your mouse on each cz charms you'd like to use, then type the command the Toast just told you, paste and save it as .txt file at `monumenta-charm-eval/build`
+
 Run the program from the command line:
 
+Linux:
 ```sh
-$ ./mtce --config config.conf --in charm_dataset.txt
+$ ./mtce --config YourConfigNameHere.conf --in YourCharmDataSetNameHere.txt
 ```
 
-Replace `config.conf` with your configuration file, and `charm_dataset.txt` with the charm dataset. You can obtain this dataset using the 
-Flowey Monumenta Addons mod (version 1.8 or later).
+Windows:
+```Powershell
+.\mtce.exe --config YourConfigNameHere.conf --in YourCharmDataSetNameHere.txt
+```
 
 Advanced options (specifying different algorithms, etc) can be done with additional CLI flags. Use `--help` to see available options:
 ```sh

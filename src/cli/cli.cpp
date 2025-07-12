@@ -59,9 +59,9 @@ namespace mtce
         {
             auto arg_value = parse_arg_generic(arg, idx, argc, argv);
             T value{};
-            auto [ptr, res] = std::from_chars(arg_value.begin(), arg_value.end(), value);
+            auto [ptr, res] = std::from_chars(arg_value.data(), arg_value.data() + arg_value.size(), value);
 
-            if (ptr != arg_value.end() || res != std::errc{})
+            if (ptr != arg_value.data() + arg_value.size() || res != std::errc{})
             {
                 std::println(std::cerr, "failed to parse argument {}", arg_value);
                 std::exit(-1);
@@ -73,9 +73,9 @@ namespace mtce
         constexpr auto read_cfg_int(size_t line_no, std::string_view value) -> int32_t
         {
             int32_t res = 0;
-            auto [ptr, ec] = std::from_chars(value.begin(), value.end(), res);
+            auto [ptr, ec] = std::from_chars(value.data(), value.data() + value.size(), res);
 
-            if (ptr != value.end() || ec != std::errc{})
+            if (ptr != value.data() + value.size() || ec != std::errc{})
             {
                 std::println(std::cerr, "malformed config on line {}: failed to parse '{}' as int", line_no, value);
                 std::exit(-1);
@@ -87,9 +87,9 @@ namespace mtce
         constexpr auto read_charm_val(size_t line_no, std::string_view data) -> T
         {
             T res{};
-            auto [ptr, ec] = std::from_chars(data.begin(), data.end(), res);
+            auto [ptr, ec] = std::from_chars(data.data(), data.data() + data.size(), res);
 
-            if (ptr != data.end() || ec != std::errc{})
+            if (ptr != data.data() + data.size() || ec != std::errc{})
             {
                 std::println(std::cerr, "malformed charm data on line {}: failed to parse '{}'", line_no, data);
                 std::exit(-1);

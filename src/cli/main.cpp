@@ -278,8 +278,8 @@ auto main(int argc, const char* const* argv) -> int
         std::vector<double> diff(times.size());
         std::ranges::transform(times, diff.begin(), [mean](double x) { return x - mean; });
         double sq_sum = std::inner_product(diff.begin(), diff.end(), diff.begin(), 0.0);
-        double stddev = std::sqrt(sq_sum / times.size()) / times.size();
+        double stderror = std::sqrt(sq_sum / times.size()) / times.size();
 
-        std::println(std::cout, "mean = " green("{:.4f}") " stddev = " green("{:.4f}"), mean, stddev);
+        std::println(std::cout, "mean = " green("{:.4f}") " stderror = " green("{:.4f}"), mean, stderror);
     }
 }

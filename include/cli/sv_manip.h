@@ -10,12 +10,13 @@ namespace mtce
 {
     constexpr auto is_space(char ch) -> bool { return ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r'; }
 
+    // Correct trim implementation for MSVC:
     inline auto trim(std::string_view str) -> std::string_view
     {
         // Find first non-space
-        const auto* begin_it = std::ranges::find_if_not(str, is_space);
+        auto begin_it = std::ranges::find_if_not(str, is_space);
         // Find last non-space (reverse view)
-        const auto* end_it = std::ranges::find_if_not(std::ranges::reverse_view(str), is_space).base();
+        auto end_it = std::ranges::find_if_not(std::ranges::reverse_view(str), is_space).base();
 
         // Convert iterators to pointers for string_view ctor
         const char* begin = begin_it == str.end() ? str.data() + str.size() : &*begin_it;
@@ -40,6 +41,7 @@ namespace mtce
             {
                 end = str.size();
             }
+
             result.emplace_back(str.data() + start, end - start);
             start = end + 1;
         }

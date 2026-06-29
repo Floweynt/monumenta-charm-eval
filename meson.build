@@ -38,7 +38,7 @@ configure_file(input: 'include/build_config.h.in', output: 'build_config.h', con
 includes = include_directories('include')
 
 # binaries 
-mtce_cli = executable('mtce', [common, cli], cpp_pch: [pch], include_directories: includes)
+mtce_cli = executable('mtce', [common, cli], cpp_pch: [pch], include_directories: includes, install: true)
 
 # --- testing & benchmark ---
 if get_option('enable_tests')

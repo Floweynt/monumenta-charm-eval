@@ -1,8 +1,13 @@
 import assert from "assert";
 import {ChatInputCommandInteraction, User} from "discord.js";
 import {UserData, UserEvalJob, UserWeightConfig} from "./data";
-import zenithCharmJson from "../misc/zenith_charm_config.json";
 import {CharmEvalTask, EvalJobRunner} from "./eval_queue";
+
+const zenithCharmRes = await fetch("https://api.playmonumenta.com/zenith_charm_effects");
+if (!zenithCharmRes.ok) {
+    throw new Error(`Failed to fetch charm effects: ${zenithCharmRes.status} ${zenithCharmRes.statusText}`);
+}
+const zenithCharmJson = await zenithCharmRes.json() as Array<{effectName: string}>;
 
 export type CommandOption = {
     type: string;

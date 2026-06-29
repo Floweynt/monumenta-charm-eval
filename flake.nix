@@ -23,7 +23,12 @@
         stdenv.mkDerivation {
           pname = "mtce";
           version = "1.0.0";
-          src = pkgs.lib.cleanSource ./.;
+          src = pkgs.lib.cleanSourceWith {
+            src = pkgs.lib.cleanSource ./.;
+            filter = path: _type:
+              let rel = pkgs.lib.removePrefix (toString ./. + "/") path;
+              in !(pkgs.lib.hasPrefix "build" rel);
+          };
 
           nativeBuildInputs = [
             pkgs.meson

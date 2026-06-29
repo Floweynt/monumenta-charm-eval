@@ -74,6 +74,7 @@
               --bundle \
               --platform=node \
               --format=esm \
+              --banner:js="import{createRequire}from'module';const require=createRequire(import.meta.url);" \
               --outfile=bot-bundle.js
             runHook postBuild
           '';

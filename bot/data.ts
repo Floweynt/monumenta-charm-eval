@@ -51,7 +51,7 @@ export class UserData {
 
                 this.createConfig0(uid, name, {
                     weights: Object.fromEntries(Object.entries(value).map(([k, v]) => {
-                        assert(/^\w+$/.test(k));
+                        assert(/^[\w']+$/.test(k));
                         assert(typeof v === "string");
                         BigInt(v); // try parse 
                         return [k, v];
